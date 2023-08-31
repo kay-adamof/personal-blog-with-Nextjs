@@ -1,12 +1,10 @@
-import { IPost } from "#/qiita";
 import React from "react";
 import Post from "./Post";
-
-export const itemsUrl = "https://qiita.com/api/v2/users/kay-adamof/items";
+import { getPosts } from '@/app/_lib/getPosts'
 
 export default async function Posts() {
-  const res = await fetch(itemsUrl);
-  const posts: IPost[] = await res.json();
+  const posts = await getPosts() 
+
   return (
     <div>
       {posts.map((post, index) => {

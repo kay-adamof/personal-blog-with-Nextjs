@@ -1,17 +1,15 @@
-import { Post } from "#/qiita";
+import { IPost } from "@/qiita.schema.types";
 import Link from "next/link";
 import React from "react";
-import { itemsUrl } from "./Posts";
-import { cl } from "@/util";
 
 type Props = {
-  post: Post;
+  post: IPost;
 };
 
 export default function Post({ post }: Props) {
   return (
     <div>
-      <Link href={}>{post.title}</Link>
+      <Link href={`http://localhost:3000/posts/${post.id}`}>{post.title}</Link>
     </div>
   );
 }
