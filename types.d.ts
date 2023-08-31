@@ -1,3 +1,4 @@
+import schema from './qiita.schema.json'
 const post = {
   description: "指定されたユーザーの記事一覧を、作成日時の降順で返します。",
   href: "/api/v2/users/:user_id/items",
@@ -22,3 +23,4 @@ const post = {
   title: "list_user_items",
 };
 type Post = typeof post
+type Schema = typeof schema

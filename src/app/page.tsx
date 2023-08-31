@@ -1,3 +1,4 @@
+import { Schema } from "../../types";
 import Posts from "./_components/Posts";
 
 export default function Home() {
