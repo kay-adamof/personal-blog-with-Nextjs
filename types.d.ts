@@ -22,5 +22,5 @@ const post = {
   },
   title: "list_user_items",
 };
-type Post = typeof post
-type Schema = typeof schema
+// type Post = typeof post
+// type Schema = typeof schema
