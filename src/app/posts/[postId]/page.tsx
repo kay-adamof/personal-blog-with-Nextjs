@@ -1,3 +1,4 @@
+import { getPost } from "@/app/_lib/getPost";
 import { IPost } from "@/qiita.schema.types";
 import { cl } from "@/util";
 import React from "react";
@@ -9,11 +10,9 @@ type Props = {
 };
 
 export default async function Post({ params: { postId } }: Props) {
-  const res = await fetch(`https://qiita.com/api/v2/items/${postId}`);
-  const post: IPost = await res.json();
-
+  const post: IPost = await getPost(postId)
   return (
-    <article className="prose lg:prose-xl">
+    <article className="prose  ">
       <h1>{post.title}</h1>
       <p>{post.body}</p>
     </article>
