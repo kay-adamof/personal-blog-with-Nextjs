@@ -1,7 +1,9 @@
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPost } from "@/app/_lib/getPost";
 import { IPost } from "@/qiita.schema.types";
-import { cl } from "@/util";
 import React from "react";
+import rehypeHighlight from "rehype-highlight";
+import 'highlight.js/styles/night-owl.css'
 
 type Props = {
   params: {
@@ -10,11 +12,19 @@ type Props = {
 };
 
 export default async function Post({ params: { postId } }: Props) {
-  const post: IPost = await getPost(postId)
+  const post: IPost = await getPost(postId);
   return (
-    <article className="prose  ">
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-    </article>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <article className="prose">
+        <MDXRemote
+          source={post.body}
+          options={{
+            mdxOptions: {
+              rehypePlugins: [rehypeHighlight],
+            },
+          }}
+        />
+      </article>
+    </main>
   );
 }

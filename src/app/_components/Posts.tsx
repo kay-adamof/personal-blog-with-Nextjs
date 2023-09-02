@@ -8,9 +8,6 @@ export default async function Posts() {
   return (
     <div>
       {posts.map((post, index) => {
-        if (index != 1) {
-          return undefined;
-        }
         return <Post key={post.id} post={post} />;
       })}
     </div>
