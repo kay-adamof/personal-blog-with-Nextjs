@@ -13,9 +13,11 @@ type Props = {
 
 export default async function Post({ params: { postId } }: Props) {
   const post: IPost = await getPost(postId);
+    
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <article className="prose">
+        <h1>{post.title}</h1>
         <MDXRemote
           source={post.body}
           options={{
