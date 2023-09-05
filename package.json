@@ -9,10 +9,12 @@
     "start": "next start",
     "lint": "next lint",
     "install:markdown-related-packages": "pnpm i highlight.js rehype-highlight rehype-autolink-headings react-markdown remark-toc rehype-slug",
+    "install:UI": "pnpm i @floating-ui/react",
     "install:code-hike": "pnpm i @code-hike/mdx"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
+    "@floating-ui/react": "^0.25.3",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.19",
