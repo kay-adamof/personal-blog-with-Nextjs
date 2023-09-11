@@ -10,7 +10,8 @@
     "lint": "next lint",
     "install:markdown-related-packages": "pnpm i highlight.js rehype-highlight rehype-autolink-headings react-markdown remark-toc rehype-slug",
     "install:UI": "pnpm i @floating-ui/react",
-    "install:code-hike": "pnpm i @code-hike/mdx"
+    "install:code-hike": "pnpm i @code-hike/mdx",
+    "prettier":"pnpm prettier --write ."
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "eslint-config-prettier": "^9.0.0",
     "json-schema-to-typescript": "^13.1.1",
     "prettier": "^3.0.3"
   }
