@@ -18,7 +18,7 @@ export default async function Post({params: {postId}}: Props) {
   const post: IPost = await getPost(postId)
 
   return (
-    <main className='mx-auto max-w-7xl flex min-h-screen flex-col items-center justify-between p-24'>
+    <main className='mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between p-24'>
       <article className='prose dark:prose-invert '>
         <h1>{post.title}</h1>
         <MDXRemote
@@ -35,9 +35,7 @@ export default async function Post({params: {postId}}: Props) {
           }}
         />
       </article>
-      <nav>
-        navigation
-      </nav>
+      <nav>navigation</nav>
     </main>
   )
 }
