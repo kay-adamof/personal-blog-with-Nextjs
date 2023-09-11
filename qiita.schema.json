@@ -30,11 +30,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "client_id",
-              "client_secret",
-              "code"
-            ]
+            "required": ["client_id", "client_secret", "code"]
           },
           "title": "create_access_token"
         },
@@ -69,11 +65,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "client_id",
-        "scopes",
-        "token"
-      ],
+      "required": ["client_id", "scopes", "token"],
       "title": "アクセストークン"
     },
     "authenticated_user": {
@@ -91,18 +83,12 @@
         "description": {
           "description": "自己紹介文",
           "example": "Hello, world.",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "facebook_id": {
           "description": "Facebook ID",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "followees_count": {
           "description": "このユーザーがフォローしているユーザーの数",
@@ -117,10 +103,7 @@
         "github_login_name": {
           "description": "GitHub ID",
           "example": "qiitan",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "id": {
           "description": "ユーザーID",
@@ -135,34 +118,22 @@
         "linkedin_id": {
           "description": "LinkedIn ID",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "location": {
           "description": "居住地",
           "example": "Tokyo, Japan",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "name": {
           "description": "設定している名前",
           "example": "Qiita キータ",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "organization": {
           "description": "所属している組織",
           "example": "Qiita Inc.",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "permanent_id": {
           "description": "ユーザーごとに割り当てられる整数のID",
@@ -182,18 +153,12 @@
         "twitter_screen_name": {
           "description": "Twitterのスクリーンネーム",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "website_url": {
           "description": "設定しているWebサイトのURL",
           "example": "https://qiita.com",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "image_monthly_upload_limit": {
           "description": "1ヶ月あたりにQiitaにアップロードできる画像の総容量",
@@ -259,9 +224,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "body"
-            ]
+            "required": ["body"]
           },
           "title": "update_comment"
         },
@@ -285,9 +248,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "body"
-            ]
+            "required": ["body"]
           },
           "title": "create_item_comment"
         },
@@ -321,10 +282,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "body",
-              "user_id"
-            ]
+            "required": ["body", "user_id"]
           },
           "title": "import_item_comment"
         },
@@ -399,18 +357,12 @@
             "description": {
               "description": "自己紹介文",
               "example": "Hello, world.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "facebook_id": {
               "description": "Facebook ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "followees_count": {
               "description": "このユーザーがフォローしているユーザーの数",
@@ -425,10 +377,7 @@
             "github_login_name": {
               "description": "GitHub ID",
               "example": "qiitan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "id": {
               "description": "ユーザーID",
@@ -443,34 +392,22 @@
             "linkedin_id": {
               "description": "LinkedIn ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "location": {
               "description": "居住地",
               "example": "Tokyo, Japan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "name": {
               "description": "設定している名前",
               "example": "Qiita キータ",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "organization": {
               "description": "所属している組織",
               "example": "Qiita Inc.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "permanent_id": {
               "description": "ユーザーごとに割り当てられる整数のID",
@@ -490,18 +427,12 @@
             "twitter_screen_name": {
               "description": "Twitterのスクリーンネーム",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "website_url": {
               "description": "設定しているWebサイトのURL",
               "example": "https://qiita.com",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             }
           },
           "required": [
@@ -555,9 +486,7 @@
                 "example": [
                   {
                     "name": "MTG/%{Year}/%{month}/%{day}",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -572,9 +501,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ]
+                  "required": ["name"]
                 },
                 "type": "array",
                 "uniqueItems": true
@@ -585,11 +512,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "body",
-              "tags",
-              "title"
-            ]
+            "required": ["body", "tags", "title"]
           },
           "title": "create_expanded_template"
         }
@@ -605,9 +528,7 @@
           "example": [
             {
               "name": "MTG/2000/01/01",
-              "versions": [
-                "0.0.1"
-              ]
+              "versions": ["0.0.1"]
             }
           ],
           "items": {
@@ -622,9 +543,7 @@
                 "type": "array"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "type": "array",
           "uniqueItems": true
@@ -635,11 +554,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "expanded_body",
-        "expanded_tags",
-        "expanded_title"
-      ],
+      "required": ["expanded_body", "expanded_tags", "expanded_title"],
       "title": "展開済みテンプレート"
     },
     "group": {
@@ -703,11 +618,7 @@
                 "type": "boolean"
               }
             },
-            "required": [
-              "url_name",
-              "name",
-              "private"
-            ]
+            "required": ["url_name", "name", "private"]
           },
           "title": "create_group"
         },
@@ -832,16 +743,11 @@
             "properties": {
               "identities": {
                 "description": "メンバーのユーザーIDかチームに登録しているemailアドレスの一覧",
-                "example": [
-                  "Qiita",
-                  "Qiitan"
-                ],
+                "example": ["Qiita", "Qiitan"],
                 "type": "array"
               }
             },
-            "required": [
-              "identities"
-            ]
+            "required": ["identities"]
           },
           "title": "add_group_member"
         },
@@ -855,16 +761,11 @@
             "properties": {
               "identities": {
                 "description": "メンバーのユーザーIDかチームに登録しているemailアドレスの一覧",
-                "example": [
-                  "Qiita",
-                  "Qiitan"
-                ],
+                "example": ["Qiita", "Qiitan"],
                 "type": "array"
               }
             },
-            "required": [
-              "identities"
-            ]
+            "required": ["identities"]
           },
           "title": "delete_group_member"
         }
@@ -886,11 +787,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "id",
-        "name",
-        "email"
-      ],
+      "required": ["id", "name", "email"],
       "title": "グループメンバー"
     },
     "item": {
@@ -967,10 +864,7 @@
               "group_url_name": {
                 "description": "この投稿を公開するグループの url_name (null で全体に公開。Qiita Teamでのみ有効)",
                 "example": "dev",
-                "type": [
-                  "null",
-                  "string"
-                ]
+                "type": ["null", "string"]
               },
               "private": {
                 "description": "限定共有状態かどうかを表すフラグ (Qiita Teamでは無効)",
@@ -982,9 +876,7 @@
                 "example": [
                   {
                     "name": "Ruby",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -999,9 +891,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ],
+                  "required": ["name"],
                   "type": "object"
                 },
                 "type": "array",
@@ -1020,10 +910,7 @@
               "organization_url_name": {
                 "description": "記事のOrganization の url_name を表します。",
                 "example": "qiita-inc",
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               },
               "slide": {
                 "description": "スライドモードが有効を表すフラグ",
@@ -1031,11 +918,7 @@
                 "type": "boolean"
               }
             },
-            "required": [
-              "body",
-              "tags",
-              "title"
-            ]
+            "required": ["body", "tags", "title"]
           },
           "title": "create_item"
         },
@@ -1073,10 +956,7 @@
               "group_url_name": {
                 "description": "この投稿を公開するグループの url_name (null で全体に公開。Qiita Teamでのみ有効)",
                 "example": "dev",
-                "type": [
-                  "null",
-                  "string"
-                ]
+                "type": ["null", "string"]
               },
               "private": {
                 "description": "限定共有状態かどうかを表すフラグ (Qiita Teamでは無効)",
@@ -1088,9 +968,7 @@
                 "example": [
                   {
                     "name": "Ruby",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -1105,9 +983,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ],
+                  "required": ["name"],
                   "type": "object"
                 },
                 "type": "array",
@@ -1121,10 +997,7 @@
               "organization_url_name": {
                 "description": "記事のOrganization の url_name を表します。",
                 "example": "qiita-inc",
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               },
               "slide": {
                 "description": "スライドモードが有効を表すフラグ",
@@ -1132,10 +1005,7 @@
                 "type": "boolean"
               }
             },
-            "required": [
-              "body",
-              "title"
-            ]
+            "required": ["body", "title"]
           },
           "title": "update_item"
         },
@@ -1159,19 +1029,14 @@
               "group_url_name": {
                 "description": "この投稿を公開するグループの url_name (null で全体に公開。Qiita Teamでのみ有効)",
                 "example": "dev",
-                "type": [
-                  "null",
-                  "string"
-                ]
+                "type": ["null", "string"]
               },
               "tags": {
                 "description": "記事に付いたタグ一覧",
                 "example": [
                   {
                     "name": "Ruby",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -1186,9 +1051,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ],
+                  "required": ["name"],
                   "type": "object"
                 },
                 "type": "array",
@@ -1217,12 +1080,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "body",
-              "tags",
-              "title",
-              "user_id"
-            ]
+            "required": ["body", "tags", "title", "user_id"]
           },
           "title": "import_item"
         },
@@ -1456,9 +1314,7 @@
           "example": [
             {
               "name": "Ruby",
-              "versions": [
-                "0.0.1"
-              ]
+              "versions": ["0.0.1"]
             }
           ],
           "items": {
@@ -1473,9 +1329,7 @@
                 "type": "array"
               }
             },
-            "required": [
-              "name"
-            ],
+            "required": ["name"],
             "type": "object"
           },
           "type": "array",
@@ -1503,18 +1357,12 @@
             "description": {
               "description": "自己紹介文",
               "example": "Hello, world.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "facebook_id": {
               "description": "Facebook ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "followees_count": {
               "description": "このユーザーがフォローしているユーザーの数",
@@ -1529,10 +1377,7 @@
             "github_login_name": {
               "description": "GitHub ID",
               "example": "qiitan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "id": {
               "description": "ユーザーID",
@@ -1547,34 +1392,22 @@
             "linkedin_id": {
               "description": "LinkedIn ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "location": {
               "description": "居住地",
               "example": "Tokyo, Japan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "name": {
               "description": "設定している名前",
               "example": "Qiita キータ",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "organization": {
               "description": "所属している組織",
               "example": "Qiita Inc.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "permanent_id": {
               "description": "ユーザーごとに割り当てられる整数のID",
@@ -1594,18 +1427,12 @@
             "twitter_screen_name": {
               "description": "Twitterのスクリーンネーム",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "website_url": {
               "description": "設定しているWebサイトのURL",
               "example": "https://qiita.com",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             }
           },
           "required": [
@@ -1631,10 +1458,7 @@
         "page_views_count": {
           "description": "閲覧数",
           "example": 100,
-          "type": [
-            "null",
-            "integer"
-          ]
+          "type": ["null", "integer"]
         },
         "team_membership": {
           "description": "Qiita Team のチームメンバー情報を表します。",
@@ -1645,17 +1469,12 @@
               "type": "string"
             }
           },
-          "required": [
-            "name"
-          ]
+          "required": ["name"]
         },
         "organization_url_name": {
           "description": "記事のOrganization の url_name を表します。",
           "example": "qiita-inc",
-          "type": [
-            "string",
-            "null"
-          ]
+          "type": ["string", "null"]
         },
         "slide": {
           "description": "スライドモードが有効を表すフラグ",
@@ -1711,18 +1530,12 @@
             "description": {
               "description": "自己紹介文",
               "example": "Hello, world.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "facebook_id": {
               "description": "Facebook ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "followees_count": {
               "description": "このユーザーがフォローしているユーザーの数",
@@ -1737,10 +1550,7 @@
             "github_login_name": {
               "description": "GitHub ID",
               "example": "qiitan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "id": {
               "description": "ユーザーID",
@@ -1755,34 +1565,22 @@
             "linkedin_id": {
               "description": "LinkedIn ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "location": {
               "description": "居住地",
               "example": "Tokyo, Japan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "name": {
               "description": "設定している名前",
               "example": "Qiita キータ",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "organization": {
               "description": "所属している組織",
               "example": "Qiita Inc.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "permanent_id": {
               "description": "ユーザーごとに割り当てられる整数のID",
@@ -1802,18 +1600,12 @@
             "twitter_screen_name": {
               "description": "Twitterのスクリーンネーム",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "website_url": {
               "description": "設定しているWebサイトのURL",
               "example": "https://qiita.com",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             }
           },
           "required": [
@@ -1837,10 +1629,7 @@
           "title": "ユーザー"
         }
       },
-      "required": [
-        "created_at",
-        "user"
-      ],
+      "required": ["created_at", "user"],
       "title": "いいね"
     },
     "project": {
@@ -1908,9 +1697,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "title": "create_comment_reaction"
         },
@@ -1927,9 +1714,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "title": "create_item_reaction"
         },
@@ -2006,18 +1791,12 @@
             "description": {
               "description": "自己紹介文",
               "example": "Hello, world.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "facebook_id": {
               "description": "Facebook ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "followees_count": {
               "description": "このユーザーがフォローしているユーザーの数",
@@ -2032,10 +1811,7 @@
             "github_login_name": {
               "description": "GitHub ID",
               "example": "qiitan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "id": {
               "description": "ユーザーID",
@@ -2050,34 +1826,22 @@
             "linkedin_id": {
               "description": "LinkedIn ID",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "location": {
               "description": "居住地",
               "example": "Tokyo, Japan",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "name": {
               "description": "設定している名前",
               "example": "Qiita キータ",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "organization": {
               "description": "所属している組織",
               "example": "Qiita Inc.",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "permanent_id": {
               "description": "ユーザーごとに割り当てられる整数のID",
@@ -2097,18 +1861,12 @@
             "twitter_screen_name": {
               "description": "Twitterのスクリーンネーム",
               "example": "qiita",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             },
             "website_url": {
               "description": "設定しているWebサイトのURL",
               "example": "https://qiita.com",
-              "type": [
-                "null",
-                "string"
-              ]
+              "type": ["null", "string"]
             }
           },
           "required": [
@@ -2132,12 +1890,7 @@
           "title": "ユーザー"
         }
       },
-      "required": [
-        "created_at",
-        "image_url",
-        "name",
-        "user"
-      ],
+      "required": ["created_at", "image_url", "name", "user"],
       "title": "絵文字リアクション"
     },
     "reacted_item": {
@@ -2215,12 +1968,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "created_at",
-                    "image_url",
-                    "name",
-                    "user_id"
-                  ],
+                  "required": ["created_at", "image_url", "name", "user_id"],
                   "title": "絵文字リアクション"
                 },
                 "type": "array"
@@ -2291,12 +2039,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "created_at",
-              "image_url",
-              "name",
-              "user_id"
-            ],
+            "required": ["created_at", "image_url", "name", "user_id"],
             "title": "絵文字リアクション"
           },
           "type": "array"
@@ -2390,13 +2133,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "description",
-        "email",
-        "id",
-        "last_accessed_at",
-        "name"
-      ],
+      "required": ["description", "email", "id", "last_accessed_at", "name"],
       "title": "チームメンバー"
     },
     "remove_team_member": {
@@ -2506,10 +2243,7 @@
         "icon_url": {
           "description": "このタグに設定されたアイコン画像のURL",
           "example": "https://s3-ap-northeast-1.amazonaws.com/qiita-tag-image/9de6a11d330f5694820082438f88ccf4a1b289b2/medium.jpg",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "id": {
           "description": "タグを特定するための一意な名前",
@@ -2522,12 +2256,7 @@
           "type": "integer"
         }
       },
-      "required": [
-        "followers_count",
-        "icon_url",
-        "id",
-        "items_count"
-      ],
+      "required": ["followers_count", "icon_url", "id", "items_count"],
       "title": "タグ"
     },
     "tagging": {
@@ -2546,18 +2275,14 @@
                 "type": "string"
               },
               "versions": {
-                "example": [
-                  "0.0.1"
-                ],
+                "example": ["0.0.1"],
                 "items": {
                   "type": "string"
                 },
                 "type": "array"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "title": "create_tagging"
         },
@@ -2577,19 +2302,14 @@
           "type": "string"
         },
         "versions": {
-          "example": [
-            "0.0.1"
-          ],
+          "example": ["0.0.1"],
           "items": {
             "type": "string"
           },
           "type": "array"
         }
       },
-      "required": [
-        "name",
-        "versions"
-      ],
+      "required": ["name", "versions"],
       "title": "タギング"
     },
     "team": {
@@ -2620,11 +2340,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "active",
-        "id",
-        "name"
-      ],
+      "required": ["active", "id", "name"],
       "title": "チーム"
     },
     "team_access_token": {
@@ -2656,11 +2372,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "client_id",
-              "client_secret",
-              "code"
-            ]
+            "required": ["client_id", "client_secret", "code"]
           },
           "title": "create_team_access_token"
         },
@@ -2695,11 +2407,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "client_id",
-        "scopes",
-        "token"
-      ],
+      "required": ["client_id", "scopes", "token"],
       "title": "チーム別アクセストークン"
     },
     "team_invitation": {
@@ -2740,10 +2448,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "email",
-        "url"
-      ],
+      "required": ["email", "url"],
       "title": "招待中のメンバー"
     },
     "template": {
@@ -2809,9 +2514,7 @@
                 "example": [
                   {
                     "name": "MTG/%{Year}/%{month}/%{day}",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -2826,9 +2529,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ]
+                  "required": ["name"]
                 },
                 "type": "array",
                 "uniqueItems": true
@@ -2846,18 +2547,10 @@
               "group_url_name": {
                 "description": "テンプレートを使って投稿を公開するグループの url_name（null で全体に公開）",
                 "example": "dev",
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               }
             },
-            "required": [
-              "body",
-              "name",
-              "tags",
-              "title"
-            ]
+            "required": ["body", "name", "tags", "title"]
           },
           "title": "create_template"
         },
@@ -2883,9 +2576,7 @@
                 "example": [
                   {
                     "name": "MTG/%{Year}/%{month}/%{day}",
-                    "versions": [
-                      "0.0.1"
-                    ]
+                    "versions": ["0.0.1"]
                   }
                 ],
                 "items": {
@@ -2900,9 +2591,7 @@
                       "type": "array"
                     }
                   },
-                  "required": [
-                    "name"
-                  ]
+                  "required": ["name"]
                 },
                 "type": "array",
                 "uniqueItems": true
@@ -2920,18 +2609,10 @@
               "group_url_name": {
                 "description": "テンプレートを使って投稿を公開するグループの url_name（null で全体に公開）",
                 "example": "dev",
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "type": ["string", "null"]
               }
             },
-            "required": [
-              "body",
-              "name",
-              "tags",
-              "title"
-            ]
+            "required": ["body", "name", "tags", "title"]
           },
           "title": "update_template"
         }
@@ -2962,9 +2643,7 @@
           "example": [
             {
               "name": "MTG/2000/01/01",
-              "versions": [
-                "0.0.1"
-              ]
+              "versions": ["0.0.1"]
             }
           ],
           "items": {
@@ -2979,9 +2658,7 @@
                 "type": "array"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "type": "array",
           "uniqueItems": true
@@ -3042,9 +2719,7 @@
           "example": [
             {
               "name": "MTG/%{Year}/%{month}/%{day}",
-              "versions": [
-                "0.0.1"
-              ]
+              "versions": ["0.0.1"]
             }
           ],
           "items": {
@@ -3059,9 +2734,7 @@
                 "type": "array"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": ["name"]
           },
           "type": "array",
           "uniqueItems": true
@@ -3220,18 +2893,12 @@
         "description": {
           "description": "自己紹介文",
           "example": "Hello, world.",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "facebook_id": {
           "description": "Facebook ID",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "followees_count": {
           "description": "このユーザーがフォローしているユーザーの数",
@@ -3246,10 +2913,7 @@
         "github_login_name": {
           "description": "GitHub ID",
           "example": "qiitan",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "id": {
           "description": "ユーザーID",
@@ -3264,34 +2928,22 @@
         "linkedin_id": {
           "description": "LinkedIn ID",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "location": {
           "description": "居住地",
           "example": "Tokyo, Japan",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "name": {
           "description": "設定している名前",
           "example": "Qiita キータ",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "organization": {
           "description": "所属している組織",
           "example": "Qiita Inc.",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "permanent_id": {
           "description": "ユーザーごとに割り当てられる整数のID",
@@ -3311,18 +2963,12 @@
         "twitter_screen_name": {
           "description": "Twitterのスクリーンネーム",
           "example": "qiita",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         },
         "website_url": {
           "description": "設定しているWebサイトのURL",
           "example": "https://qiita.com",
-          "type": [
-            "null",
-            "string"
-          ]
+          "type": ["null", "string"]
         }
       },
       "required": [
