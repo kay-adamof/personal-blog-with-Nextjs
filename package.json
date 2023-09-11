@@ -11,8 +11,8 @@
     "install:markdown-related-packages": "pnpm i highlight.js rehype-highlight rehype-autolink-headings react-markdown remark-toc rehype-slug",
     "install:UI": "pnpm i @floating-ui/react",
     "install:code-hike": "pnpm i @code-hike/mdx",
-    "prettier":"pnpm exec prettier . -w",
-    "prettier-check":"pnpm exec prettier . -c"
+    "pt": "pnpm exec prettier . -w",
+    "pt-check": "pnpm exec prettier . -c"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
