@@ -8,7 +8,7 @@ type Props = {
 
 export default function Post({ post }: Props) {
   return (
-    <div>
+    <div className="dark:text-white">
       <Link href={`http://localhost:3000/posts/${post.id}`}>{post.title}</Link>
     </div>
   );
