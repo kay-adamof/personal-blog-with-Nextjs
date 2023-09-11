@@ -19,7 +19,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       lang='ja'
       className='dark'
     >
-      <body>
+      <body className='bg-gray-100  dark:bg-gray-900'>
         <Providers>
           <Navbar>
             <Button>Toggle Theme</Button>

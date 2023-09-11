@@ -6,7 +6,7 @@ export default async function Posts() {
   const posts = await getPosts()
 
   return (
-    <div>
+    <div className=''>
       {posts.map((post, index) => {
         return (
           <Post
