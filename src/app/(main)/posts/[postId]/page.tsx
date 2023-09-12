@@ -1,12 +1,13 @@
-import {MDXRemote} from 'next-mdx-remote/rsc'
-import {getPost} from '@/app/_lib/getPost'
-import {IPost} from '@/qiita.schema.types'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { getPost } from '@/app/_lib/getPost'
+import { IPost } from '@/qiita.schema.types'
 import React from 'react'
 import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/night-owl.css'
 import Toc from '@/app/_components/Toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import ScrollToTop from '../../_components/client/ScrollToTop'
 
 type Props = {
   params: {
@@ -14,7 +15,7 @@ type Props = {
   }
 }
 
-export default async function Post({params: {postId}}: Props) {
+export default async function Post({ params: { postId } }: Props) {
   const post: IPost = await getPost(postId)
 
   return (
@@ -29,13 +30,13 @@ export default async function Post({params: {postId}}: Props) {
               rehypePlugins: [
                 rehypeHighlight,
                 rehypeSlug,
-                [rehypeAutolinkHeadings, {behaviors: 'wrap'}],
+                [rehypeAutolinkHeadings, { behaviors: 'wrap' }],
               ],
             },
           }}
         />
       </article>
-      <nav>navigation</nav>
+      <ScrollToTop>{'Go to Top'}</ScrollToTop>
     </main>
   )
 }

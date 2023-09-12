@@ -1,5 +1,5 @@
 // components/mdx-remote.js
-import {MDXRemote} from 'next-mdx-remote/rsc'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
 const components = {
   h1: props => (
@@ -16,7 +16,7 @@ export function CustomMDX(props) {
   return (
     <MDXRemote
       {...props}
-      components={{...components, ...(props.components || {})}}
+      components={{ ...components, ...(props.components || {}) }}
     />
   )
 }
