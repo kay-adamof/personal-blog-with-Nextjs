@@ -4,7 +4,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from '@main/_components/server/Navbar'
 import { Providers } from '@main/_components/client/Providers'
-import ThemeToggleButton from './_components/client/ThemeToggleButton'
+import ThemeToggleButton from './_components/client/ToggleThemeButton'
+import ThemeSetter from './ThemeSetter'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,15 +22,14 @@ export default function RootLayout({
   return (
     <html
       lang='ja'
-      className='dark'
     >
       <body className='bg-gray-300  dark:bg-gray-900'>
-        <Providers>
+        <ThemeSetter>
           <Navbar>
             <ThemeToggleButton>Toggle Theme</ThemeToggleButton>
           </Navbar>
           {children}
-        </Providers>
+        </ThemeSetter>
       </body>
     </html>
   )
