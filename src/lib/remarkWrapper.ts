@@ -1,0 +1,5 @@
+export { default as embedder } from '@remark-embedder/core'
+export { default as remark } from 'remark'
+export { default as gfm } from 'remark-gfm'
+export { default as html } from 'remark-html'
+export { default as embedderTransformer } from '@remark-embedder/transformer-oembed'
