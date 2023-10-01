@@ -39,6 +39,7 @@ next-env.d.ts
 refs
 (experimental)
 _test
+articles
 
 # bun
 bun.lockb
