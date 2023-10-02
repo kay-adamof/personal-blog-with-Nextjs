@@ -6,13 +6,14 @@ import { rehype } from '@/lib'
 // import type { Config } from '@remark-embedder/transformer-oembed'
 import 'highlight.js/styles/night-owl.css'
 import * as T from '@/types'
+import {CustomMDX} from './CustomMdx'
 
 export const Home = async ({ post }: { post: T.Post }) => {
 
   return (
     <article className='prose dark:prose-invert'>
       <h1>{post.title}</h1>
-      <MDXRemote
+      <CustomMDX
         source={post.body}
         options={{
           mdxOptions: {
