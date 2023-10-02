@@ -1,6 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import React from 'react'
+import { JsxElement } from 'typescript'
 
-const H2component = (props: React.PropsWithChildren) => (
+const H2component = (props: React.PropsWithChildren): JSX.Element => (
   <h2
     {...props}
     className='text-red-300'
