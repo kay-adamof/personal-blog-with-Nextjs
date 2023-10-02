@@ -1,14 +1,19 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
+const H2component = (props: React.PropsWithChildren) => (
+  <h2
+    {...props}
+    className='text-red-300'
+  >
+    {props.children}
+  </h2>
+)
+
 const components = {
-  h2: (props:React.PropsWithChildren) => (
-    <h2 {...props} className="text-green-800">
-      {props.children}
-    </h2>
-  ),
+  h2: H2component,
 }
 
-export function CustomMDX(props:any) {
+export function CustomMDX(props: any) {
   return (
     <MDXRemote
       {...props}
