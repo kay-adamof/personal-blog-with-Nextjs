@@ -3,8 +3,8 @@ import * as Icon from './icons'
 
 const className = {
   button: 'text-white/70 hover:text-white',
-  success: '',
 }
+
 export const ClipboardButton = () => {
   const [isClicked, setIsClicked] = useState(false)
 
