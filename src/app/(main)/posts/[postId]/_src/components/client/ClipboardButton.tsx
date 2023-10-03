@@ -1,14 +1,15 @@
+import { useState } from 'react'
+import * as Icon from './icons'
+
 const className = {
   button: 'text-white/70 hover:text-white',
-  success: 'text-green-300',
+  success: '',
 }
-export const ClipboardButton = ({
-  children,
-}: {
-  children: React.ReactNode
-}) => {
+export const ClipboardButton = () => {
+  const [isClicked, setIsClicked] = useState(false)
+
   return (
-    <div>
+    <>
       <button
         className={className.button}
         onClick={e => {
@@ -26,11 +27,12 @@ export const ClipboardButton = ({
             navigator.clipboard
               .writeText(code)
               .then(() => {
-                console.log('Text saved to clipboard')
-                target.classList.add(className.success)
+                setIsClicked(isClicked=>!isClicked)
+                target.disabled=true
                 setTimeout(() => {
-                  target.classList.remove(className.success)
-                }, 2000)
+                  setIsClicked(isClicked=>!isClicked)
+                  target.disabled=false
+                }, 800)
               })
               .catch(error => {
                 console.error('Failed to save text to clipboard:', error)
@@ -40,8 +42,8 @@ export const ClipboardButton = ({
           }
         }}
       >
-        {children}
+        {isClicked?<Icon.CheckLinearIcon/>:<Icon.CopyLinearIcon/>}
       </button>
-    </div>
+    </>
   )
 }
