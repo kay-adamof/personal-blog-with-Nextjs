@@ -1,15 +1,10 @@
-import { MDXRemote } from 'next-mdx-remote/rsc'
-// import * as lib from '../lib'
-// import * as CT from '../constants'
 import { remark } from '@/lib'
 import { rehype } from '@/lib'
-// import type { Config } from '@remark-embedder/transformer-oembed'
 import 'highlight.js/styles/night-owl.css'
 import * as T from '@/types'
-import {CustomMDX} from './CustomMdx'
+import { CustomMDX } from './CustomMdx'
 
 export const Home = async ({ post }: { post: T.Post }) => {
-
   return (
     <article className='prose dark:prose-invert'>
       <h1>{post.title}</h1>
