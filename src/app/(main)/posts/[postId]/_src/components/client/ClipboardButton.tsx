@@ -27,11 +27,11 @@ export const ClipboardButton = () => {
             navigator.clipboard
               .writeText(code)
               .then(() => {
-                setIsClicked(isClicked=>!isClicked)
-                target.disabled=true
+                setIsClicked(isClicked => !isClicked)
+                target.disabled = true
                 setTimeout(() => {
-                  setIsClicked(isClicked=>!isClicked)
-                  target.disabled=false
+                  setIsClicked(isClicked => !isClicked)
+                  target.disabled = false
                 }, 800)
               })
               .catch(error => {
@@ -42,7 +42,7 @@ export const ClipboardButton = () => {
           }
         }}
       >
-        {isClicked?<Icon.CheckLinearIcon/>:<Icon.CopyLinearIcon/>}
+        {isClicked ? <Icon.CheckLinearIcon /> : <Icon.CopyLinearIcon />}
       </button>
     </>
   )
