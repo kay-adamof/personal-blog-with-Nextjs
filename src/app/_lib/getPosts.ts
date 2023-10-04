@@ -1,8 +1,8 @@
-import { IPost } from '@/qiita.schema.types'
-import { itemsUrl } from '@/app/_constants/URLs'
+import * as T from '@/types'
+import * as CT from '@/constants'
 
 export const getPosts = async () => {
-  const res = await fetch(itemsUrl)
-  const posts: IPost[] = await res.json()
+  const res = await fetch(CT.itemsUrl,{ next: { revalidate: 3600 } })
+  const posts: T.Post[] = await res.json()
   return posts
 }
