@@ -38,8 +38,10 @@ next-env.d.ts
 .logs
 refs
 (experimental)
+_(experimental)
 _test
 articles
+trashbox
 
 # bun
 bun.lockb
