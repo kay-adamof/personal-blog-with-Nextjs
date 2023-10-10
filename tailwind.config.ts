@@ -1,5 +1,16 @@
 import type { Config } from 'tailwindcss'
-import { nextui } from '@nextui-org/react'
+import type { Config as DaisyUiConfig } from 'daisyui'
+
+const daisyUiConfig: DaisyUiConfig = {
+  themes: [],
+  darkTheme: 'dark',
+  base: true,
+  styled: true,
+  utils: true,
+  rtl: false,
+  prefix: '',
+  logs: false, // <== IMPORTANT: To avoid error in using Next.js @2023-10-10
+}
 
 const config: Config = {
   content: [
@@ -17,7 +28,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), nextui()],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   darkMode: 'class',
+  daisyui: daisyUiConfig
 }
+
 export default config
