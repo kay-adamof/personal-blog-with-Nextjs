@@ -71,6 +71,9 @@ const Anchor = async (
 const components = {
   code: Code,
   a: Anchor,
+  p: (props: HTMLAttributes<HTMLDivElement>) => (
+    <div className='my-5'>{props.children}</div>
+  ),
 }
 
 export function CustomMDX(props: any) {
