@@ -1,13 +1,12 @@
 import '@/app/globals.css'
 import '@code-hike/mdx/dist/index.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import Navbar from '@main/_components/server/Navbar'
-import { Providers } from '@main/_components/client/Providers'
 import ThemeToggleButton from './_components/client/ToggleThemeButton'
 import ThemeSetter from './ThemeSetter'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,8 +21,9 @@ export default function RootLayout({
   return (
     <html
       lang='ja'
+      data-theme='night'
     >
-      <body className='bg-gray-300  dark:bg-gray-900'>
+      <body className=''>
         <ThemeSetter>
           <Navbar>
             <ThemeToggleButton>Toggle Theme</ThemeToggleButton>
