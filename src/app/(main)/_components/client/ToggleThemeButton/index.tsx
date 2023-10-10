@@ -1,5 +1,7 @@
 'use client'
 
+import { setTheme } from "@/app/(main)/ThemeSetter"
+
 export default function ThemeToggleButton({
   children,
 }: {
@@ -10,6 +12,7 @@ export default function ThemeToggleButton({
       onClick={() => {
         document.documentElement.classList.toggle('dark')
         const isDark = document.documentElement.classList.contains('dark')
+        isDark ? setTheme('night') : setTheme('lemonade')
         isDark
           ? localStorage.setItem('theme', 'dark')
           : localStorage.setItem('theme', 'light')
