@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 import type { Config as DaisyUiConfig } from 'daisyui'
 
 const daisyUiConfig: DaisyUiConfig = {
-  themes: [],
+  themes: ['lemonade','night'],
   darkTheme: 'dark',
   base: true,
   styled: true,
