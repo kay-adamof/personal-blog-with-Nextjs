@@ -1,5 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import React, { AnchorHTMLAttributes, HTMLAttributes } from 'react'
+import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
 import { Code } from './Code'
 import * as lib from '../../lib'
 import urlMetadata from 'url-metadata'
@@ -13,14 +13,36 @@ const getMeta =
       return typeof data === 'string' ? data : ''
     }
 
+const BookmarkCard = (meta: (str: keyofMetadata) => string): JSX.Element => (
+  <>
+    <div className='card md:card-side'>
+      <div className='card-body'>
+        <h2 className='card-title'>{meta('og:title')}</h2>
+        <p>{meta('og:description')}</p>
+      </div>
+      <figure className='invisible md:visible'>
+        <Image
+          src={meta('og:image')}
+          width={1200}
+          height={630}
+          alt=''
+        />
+      </figure>
+    </div>
+  </>
+)
+
+const DefaultAnchor = (
+  props: AnchorHTMLAttributes<HTMLAnchorElement>,
+): JSX.Element => <a {...props} />
+
 const Anchor = async (
   props: AnchorHTMLAttributes<HTMLAnchorElement>,
 ): Promise<JSX.Element | string> => {
-  const defaultAnchor: JSX.Element = <a {...props} />
 
-  if (!props.href) return defaultAnchor
+  if (!props.href) return DefaultAnchor(props)
 
-  if (!lib.isUrl(props.href)) return defaultAnchor
+  if (!lib.isUrl(props.href)) return DefaultAnchor(props)
 
   const url = new URL(props.href)
   const oembedProviderUrls = await lib.getOembedProviderUrls()
@@ -30,32 +52,16 @@ const Anchor = async (
       .some(v => v === true)
   }
 
-  if (hasUrlOfOembedProvider(oembedProviderUrls)) return defaultAnchor
+  if (hasUrlOfOembedProvider(oembedProviderUrls)) return DefaultAnchor(props)
 
   try {
+
     const metaData = await urlMetadata(url.toString())
     const meta = getMeta(metaData)
 
-    return (
-      <>
-        <div className='card md:card-side'>
-          <div className='card-body'>
-            <h2 className='card-title'>{meta('og:title')}</h2>
-            <p>{meta('og:description')}</p>
-          </div>
-          <figure className='invisible md:visible'>
-            <Image
-              src={meta('og:image')}
-              width={1200}
-              height={630}
-              alt=''
-            />
-          </figure>
-        </div>
-      </>
-    )
+    return BookmarkCard(meta)
   } catch (error) {
-    return defaultAnchor
+    return DefaultAnchor(props)
   }
 }
 
