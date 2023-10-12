@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss'
 import type { Config as DaisyUiConfig, Theme } from 'daisyui'
+import { MyTheme } from '@/types'
 
-export type myTheme = 'lemonade' | 'night'
-const myTheme:Extract<Theme, myTheme>[] = ['lemonade','night']
+const myTheme:Extract<Theme, MyTheme>[] = ['lemonade','night']
 const daisyUiConfig: DaisyUiConfig = {
   themes: myTheme,
   base: true,

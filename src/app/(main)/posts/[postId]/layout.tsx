@@ -1,7 +1,6 @@
 import Script from 'next/script'
-import * as CT from '@/constants'
-
 import type { Metadata } from 'next'
+import { twitterWidgets } from '@/constants/scriptSrc'
 
 export const metadata: Metadata = {
   title: 'next-mdx-remote experimental',
@@ -16,7 +15,7 @@ export default function PostLayout({
   return (
     <>
       {children}
-      <Script src={CT.twitterWidgets} />
+      <Script src={twitterWidgets} />
     </>
   )
 }
