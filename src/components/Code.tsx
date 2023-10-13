@@ -23,7 +23,7 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
         <>
           <span className='relative'>
             <span
-              className='absolute -inset-0.5 block mx-1 bg-sky-600'
+              className='absolute -inset-0.5 block mx-0.5'
               aria-hidden='true'
             ></span>
             <code className="relative before:mr-1 before:content-[''] after:ml-1 after:content-['']">
