@@ -1,6 +1,18 @@
 'use client'
 
-import setTheme from "@/lib/setTheme"
+import { MyTheme } from '@/types'
+import setDataTheme from '@/lib/setDataTheme'
+import { LocalStorageTheme } from '@/types/LocalStorageTheme'
+
+const getDataTheme = () =>
+  document.documentElement.getAttribute('data-theme') as
+  | (MyTheme & string)
+  | (string & {})
+  | null
+
+const toStoreThemeToLocalStorage = (theme: LocalStorageTheme) => {
+  localStorage.setItem('theme', theme)
+}
 
 export default function ThemeToggleButton({
   children,
@@ -10,12 +22,17 @@ export default function ThemeToggleButton({
   return (
     <button
       onClick={() => {
-        document.documentElement.classList.toggle('dark')
-        const isDark = document.documentElement.classList.contains('dark')
-        isDark ? setTheme('night') : setTheme('lemonade')
-        isDark
-          ? localStorage.setItem('theme', 'dark')
-          : localStorage.setItem('theme', 'light')
+        const dataTheme = getDataTheme()
+
+        if (dataTheme === 'lemonade') {
+          setDataTheme('night')
+          toStoreThemeToLocalStorage('dark')
+        }
+        if (dataTheme === 'night') { 
+          setDataTheme('lemonade') 
+          toStoreThemeToLocalStorage('light')
+        }
+
       }}
     >
       {children}
