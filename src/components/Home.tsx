@@ -7,16 +7,15 @@ import { Qiita } from '@/types'
 import { CustomMDX } from '@/components/CustomMdx'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-
+import type { Config } from '@remark-embedder/transformer-oembed'
 
 export default async ({ post }: { post: Qiita.Post }) => {
-
   const regex = {
     urlBase:
       '\\https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)',
     url: /\https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/g,
     link: () =>
-      new RegExp(`\\n\\[(${regex.urlBase})\\]\\(${regex.urlBase}\\)`,"g"),
+      new RegExp(`\\n\\[(${regex.urlBase})\\]\\(${regex.urlBase}\\)`, 'g'),
     Url: /\n(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*))/g,
     Xcom: /https:\/\/x\.com/g,
     Twitter:
@@ -31,8 +30,20 @@ export default async ({ post }: { post: Qiita.Post }) => {
       (_, $1, $2, $3) => $1 + $2.replace(/_/g, '\\_') + $3,
     ) // To avoid the parser recognizes the word surrounded by underscore as italic
 
+  const oembedConfig: Config = ({ url, provider }) => {
+    if (provider.provider_name === 'YouTube') {
+      console.log(provider.endpoints)
+      return { params: { maxwidth: "640", maxheight:"360" } }
+    }
+    if (provider.provider_name === 'Twitter') {
+      return { params: { theme: 'dark', dnt: true, omit_script: true } }
+    }
+    return {
+      params: {},
+    }
+  }
   return (
-    <article className='prose prose-h1:text-[28px] dark:prose-invert'>
+    <article className='prose dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
       <CustomMDX
         source={contentAfterReplaced}
@@ -43,7 +54,9 @@ export default async ({ post }: { post: Qiita.Post }) => {
               [
                 remarkEmbedder,
                 {
-                  transformers: [remarkEmbedderTransformerOembed],
+                  transformers: [
+                    [remarkEmbedderTransformerOembed, oembedConfig],
+                  ],
                 },
               ],
             ],
