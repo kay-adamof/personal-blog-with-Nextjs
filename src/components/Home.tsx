@@ -1,9 +1,12 @@
-import { remark } from '@/lib'
-import { rehype } from '@/lib'
+import remarkEmbedder from '@remark-embedder/core'
+import remarkEmbedderTransformerOembed from '@remark-embedder/transformer-oembed'
+import rehypeSlug from 'rehype-slug'
+import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/night-owl.css'
 import { Qiita } from '@/types'
 import { CustomMDX } from '@/components/CustomMdx'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 
 export default async ({ post }: { post: Qiita.Post }) => {
@@ -38,15 +41,15 @@ export default async ({ post }: { post: Qiita.Post }) => {
             remarkPlugins: [
               // [remark.gfm],
               [
-                remark.embedder,
+                remarkEmbedder,
                 {
-                  transformers: [remark.embedderTransformer],
+                  transformers: [remarkEmbedderTransformerOembed],
                 },
               ],
             ],
             rehypePlugins: [
               [
-                rehype.highlight,
+                rehypeHighlight,
                 {
                   ignoreMissing: true,
                   languages: {
@@ -55,8 +58,8 @@ export default async ({ post }: { post: Qiita.Post }) => {
                   aliases: { dockerfile: 'docker', docker: 'dockerfile' },
                 },
               ],
-              rehype.slug,
-              [rehype.headings, { behaviors: 'wrap' }],
+              rehypeSlug,
+              [rehypeAutolinkHeadings, { behaviors: 'wrap' }],
             ],
           },
         }}
