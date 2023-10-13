@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import getPosts from '@/lib/getPosts'
 
@@ -9,7 +8,7 @@ export default async function Posts() {
     <div className=''>
       {posts.map((post) => {
         return (
-          <div className='dark:text-white'>
+          <div key={post.id} className=''>
             <Link href={`http://localhost:3000/posts/${post.id}`}>{post.title}</Link>
           </div>
         )
