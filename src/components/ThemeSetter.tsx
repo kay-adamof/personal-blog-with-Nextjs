@@ -1,7 +1,6 @@
 'use client'
 
 import { MyTheme } from '@/types'
-import React from 'react'
 import { useEffect } from 'react'
 import setTheme from '@/lib/setTheme'
 
