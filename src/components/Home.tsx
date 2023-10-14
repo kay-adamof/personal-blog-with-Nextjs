@@ -32,8 +32,9 @@ export default async ({ post }: { post: Qiita.Post }) => {
 
   const oembedConfig: Config = ({ url, provider }) => {
     if (provider.provider_name === 'YouTube') {
-      console.log(provider.endpoints)
-      return { params: { maxwidth: "640", maxheight:"360" } }
+      const w = 640
+      const h = (w * 9) / 16
+      return { params: { maxwidth: w.toString(), maxheight: h.toString() } }
     }
     if (provider.provider_name === 'Twitter') {
       return { params: { theme: 'dark', dnt: true, omit_script: true } }
