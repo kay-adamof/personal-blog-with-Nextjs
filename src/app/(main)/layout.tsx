@@ -20,9 +20,7 @@ export default ({ children }: { children: React.ReactNode }) => {
     >
       <body className=''>
         <ThemeSetter>
-          <Navbar>
-            <ThemeToggleButton>Toggle Theme</ThemeToggleButton>
-          </Navbar>
+          <Navbar/>
           {children}
         </ThemeSetter>
       </body>
