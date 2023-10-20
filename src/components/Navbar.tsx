@@ -11,9 +11,7 @@ export default () => {
         </Link>
       </div>
       <div className='flex-none'>
-        <ThemeToggleButton>
-          <MoonStarsIcon />
-        </ThemeToggleButton>
+        <ThemeToggleButton />
       </div>
     </nav>
   )
