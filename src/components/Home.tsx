@@ -1,4 +1,7 @@
-import remarkEmbedder from '@remark-embedder/core'
+import remarkEmbedder, {
+  TransformerInfo,
+  Transformer,
+} from '@remark-embedder/core'
 import remarkEmbedderTransformerOembed from '@remark-embedder/transformer-oembed'
 import rehypeSlug from 'rehype-slug'
 import rehypeHighlight from 'rehype-highlight'
@@ -8,6 +11,17 @@ import { CustomMDX } from '@/components/CustomMdx'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import type { Config } from '@remark-embedder/transformer-oembed'
+
+function handleHTML(html: string, info: TransformerInfo) {
+  const { url, transformer } = info
+  const twitter = `${html}`
+
+  if (transformer.name === '@remark-embedder/transformer-oembed') {
+    if (url.includes('youtube.com')) return `${html}`
+    if (url.includes('twitter.com')) return twitter
+  }
+  return html
+}
 
 export default async ({ post }: { post: Qiita.Post }) => {
   const regex = {
@@ -58,6 +72,7 @@ export default async ({ post }: { post: Qiita.Post }) => {
                   transformers: [
                     [remarkEmbedderTransformerOembed, oembedConfig],
                   ],
+                  handleHTML,
                 },
               ],
             ],
