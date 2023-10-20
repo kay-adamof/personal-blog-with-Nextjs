@@ -58,7 +58,7 @@ export default async ({ post }: { post: Qiita.Post }) => {
     }
   }
   return (
-    <article className='prose mx-auto dark:prose-invert prose-h1:text-[28px]'>
+    <article className='prose pt-10 mx-auto dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
       <CustomMDX
         source={contentAfterReplaced}
