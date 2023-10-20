@@ -1,9 +1,13 @@
+import Navbar from "@/components/Navbar"
 import Posts from "@/components/Posts"
 
 export default ()=> {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <Posts />{' '}
-    </main>
+    <> 
+      <Navbar />
+      <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+        <Posts />{' '}
+      </main>
+    </> 
   )
 }
