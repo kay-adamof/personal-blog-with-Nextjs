@@ -37,7 +37,7 @@ export default async ({ post }: { post: Qiita.Post }) => {
       return { params: { maxwidth: w.toString(), maxheight: h.toString() } }
     }
     if (provider.provider_name === 'Twitter') {
-      return { params: { theme: 'dark', dnt: true, omit_script: true } }
+      return { params: { theme: 'light', hide_thread:true, dnt: true, omit_script: true } }
     }
     return {
       params: {},
