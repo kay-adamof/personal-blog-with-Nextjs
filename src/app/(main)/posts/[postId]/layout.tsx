@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import type { Metadata } from 'next'
 import './global.css'
 import TwitterBackgroundColor from '@/components/TwitterBackgroundColor'
@@ -16,7 +15,7 @@ export default function PostLayout({
   return (
     <>
       {children}
-      <Script src={twitterWidgets} />
+      <TwitterBackgroundColor />
     </>
   )
 }
