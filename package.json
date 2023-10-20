@@ -37,7 +37,7 @@
     "is-url": "^1.2.4",
     "mdast": "^3.0.0",
     "mdast-util-toc": "^7.0.0",
-    "next": "^13.5.4",
+    "next": "latest",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.29",
