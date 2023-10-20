@@ -20,7 +20,6 @@ export default ({ children }: { children: React.ReactNode }) => {
     >
       <body className=''>
         <ThemeSetter>
-          <Navbar/>
           {children}
         </ThemeSetter>
       </body>

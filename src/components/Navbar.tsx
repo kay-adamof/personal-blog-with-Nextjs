@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import ThemeToggleButton from './ToggleThemeButton'
-import MoonStarsIcon from './MoonStarsIcon'
 
 export default () => {
   return (
