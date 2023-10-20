@@ -23,6 +23,7 @@
       "@main/*": ["./src/app/(main)/*"],
       "@components/*": ["./src/app/(main)/_components/*"],
       "@server_components": ["./src/components/server.js"],
+      "@client_components": ["./src/components/client.js"],
       "@experimental/*": ["./src/app/(experimental)/*"]
     }
   },
