@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import type { Metadata } from 'next'
-import { twitterWidgets } from '@/constants/scriptSrc'
+import './global.css'
+import TwitterBackgroundColor from '@/components/TwitterBackgroundColor'
 
 export const metadata: Metadata = {
   title: 'next-mdx-remote experimental',
