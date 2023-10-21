@@ -16,12 +16,8 @@ const getMeta =
 
 const BookmarkCard = (meta: (str: KeyOfMetadata) => string): JSX.Element => (
   <>
-    <div className='card md:card-side'>
-      <div className='card-body'>
-        <h2 className='card-title'>{meta('og:title')}</h2>
-        <p>{meta('og:description')}</p>
-      </div>
-      <figure className='invisible md:visible'>
+    <div className='card shadow-xl md:card-side'>
+      <figure className='mb-0'>
         <Image
           src={meta('og:image')}
           width={1200}
@@ -29,6 +25,10 @@ const BookmarkCard = (meta: (str: KeyOfMetadata) => string): JSX.Element => (
           alt=''
         />
       </figure>
+      <div className='card-body prose prose-sm dark:bg-slate-950'>
+        <h2 className='card-title p-0 m-0'>{meta('og:title')}</h2>
+        <p>{meta('og:description')}</p>
+      </div>
     </div>
   </>
 )
