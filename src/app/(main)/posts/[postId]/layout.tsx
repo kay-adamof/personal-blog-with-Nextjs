@@ -15,7 +15,6 @@ export default function PostLayout({
 }) {
   return (
     <>
-      <Navbar />
       {children}
       <TwitterBackgroundColor />
     </>
