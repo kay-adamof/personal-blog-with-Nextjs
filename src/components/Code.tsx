@@ -42,20 +42,6 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
 
       break
   }
-  // if (codeType === 'fenced') {
-  //   content = (
-  //     <>
-  //       <C.ClipboardButton />
-  //       <code {...props}>{props.children}</code>
-  //     </>
-  //   )
-  // }
-  // if (codeType === 'inline') {
-  //   content = (
-  //     <>
-  //       <code {...props} />
-  //     </>
-  //   )
-  // }
+
   return content
 }
