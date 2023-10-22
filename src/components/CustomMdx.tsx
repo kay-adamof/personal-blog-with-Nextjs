@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
-import { Code } from '@/components/Code'
+import * as S from '@server_components'
 import getOembedProvidersUrls from '@/lib/getOembedProvidersUrls'
 import isUrl from '@/lib/isUrl'
 import urlMetadata from 'url-metadata'
@@ -65,7 +65,7 @@ const Anchor = async (
 }
 
 const components = {
-  code: Code,
+  code: S.Code,
   a: Anchor,
   p: (props: HTMLAttributes<'div'>) => (
     <div className='my-5'>{props.children}</div>
