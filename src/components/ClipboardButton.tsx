@@ -17,11 +17,10 @@ export default () => {
         onClick={e => {
           const target = e.currentTarget
           const pre = target.closest('pre')
-          if (!pre?.lastElementChild) {
-            console.log('Code not found')
-            return
+          if (!pre?.lastElementChild?.textContent) {
+            throw new Error('Code not found')
           }
-          const code = pre.lastElementChild.textContent as string
+          const code = pre.lastElementChild.textContent
 
           // Check if the browser supports the Clipboard API
           if (navigator.clipboard && navigator.clipboard.writeText) {
