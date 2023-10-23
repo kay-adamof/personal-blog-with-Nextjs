@@ -3,7 +3,6 @@ import ScrollToTop from '@/components/ScrollToTop'
 import { Qiita } from '@/types'
 import Toc from '@/components/Toc'
 import Home from '@/components/Home'
-import { TbMoonStars, TbSunHigh } from 'react-icons/tb'
 import * as S from '@server_components'
 import * as C from '@client_components'
 

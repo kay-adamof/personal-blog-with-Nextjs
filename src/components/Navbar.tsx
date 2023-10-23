@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 interface Props {
   ToggleThemeButton: React.ReactNode
   left: React.ReactNode
