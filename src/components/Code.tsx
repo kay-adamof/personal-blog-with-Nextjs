@@ -1,7 +1,10 @@
 import { HTMLAttributes, ReactNode } from 'react'
 import ClipboardButton from './ClipboardButton'
+import * as S from '@server_components'
+import * as L from '@/lib'
+import * as c from '@/constants'
 
-export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
+export default (props: HTMLAttributes<HTMLElement>): ReactNode => {
   let content: ReactNode = ''
 
   // Two possibilities: 'inline code' / 'fenced code block'
@@ -10,9 +13,22 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
 
   switch (codeType) {
     case 'fenced':
+      let lang = L.getLang(props)
+      if (!lang) lang = ''
+      const langAliase = c.lowerCasedAliases[lang]
       content = (
         <>
-          <ClipboardButton />
+          <div className='navbar'>
+            <div className='navbar-start'>
+              <S.LangBadge
+                lang={lang}
+                langIcon={<i className={`devicon-${langAliase}-original colored`}></i>}
+              />
+            </div>
+            <div className='navbar-end'>
+              <ClipboardButton />
+            </div>
+          </div>
           <code {...props}>{props.children}</code>
         </>
       )
@@ -23,7 +39,7 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
         <>
           <span className='relative'>
             <span
-              className='absolute -inset-0.5 block mx-0.5'
+              className='absolute -inset-0.5 mx-0.5 block'
               aria-hidden='true'
             ></span>
             <code className="relative before:mr-1 before:content-[''] after:ml-1 after:content-['']">
