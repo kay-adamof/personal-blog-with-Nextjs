@@ -21,7 +21,7 @@ export default (props: HTMLAttributes<HTMLElement>): ReactNode => {
           <div className='navbar'>
             <div className='navbar-start'>
               <S.LangBadge
-                lang={lang}
+                lang={langAliase}
                 langIcon={<i className={`devicon-${langAliase}-original colored`}></i>}
               />
             </div>
