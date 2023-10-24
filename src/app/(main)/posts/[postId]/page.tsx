@@ -19,9 +19,8 @@ export default async ({
     <>
       <S.Navbar
         left={<S.LinkToRoot />}
-        ToggleThemeButton={
-          <C.ToggleThemeButton />
-        }
+        ToggleThemeButton={<C.ToggleThemeButton />}
+        ToggleTocButton={<S.ToggleTocButton />}
       />
       <main className='container mx-auto px-6'>
         <Home post={post} />

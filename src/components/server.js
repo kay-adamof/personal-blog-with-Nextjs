@@ -1,4 +1,5 @@
-export { default as Navbar } from './Navbar'
+export * from './Navbar'
+export * from './ToggleTocButton'
 export { default as LinkToRoot } from './GoToRoot'
 export * from './BadgeForLang'
 export { default as Code } from './Code'
