@@ -1,6 +1,5 @@
 import remarkEmbedder, {
   TransformerInfo,
-  Transformer,
 } from '@remark-embedder/core'
 import remarkEmbedderTransformerOembed from '@remark-embedder/transformer-oembed'
 import rehypeSlug from 'rehype-slug'
@@ -10,7 +9,6 @@ import { Qiita } from '@/types'
 import { CustomMDX } from '@/components/CustomMdx'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import type { Config } from '@remark-embedder/transformer-oembed'
 import * as c from '@/constants'
 import * as l from '@/lib'
 import * as config from '@/config'
