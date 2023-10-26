@@ -1,6 +1,4 @@
-import remarkEmbedder, {
-  TransformerInfo,
-} from '@remark-embedder/core'
+import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core'
 import remarkEmbedderTransformerOembed from '@remark-embedder/transformer-oembed'
 import rehypeSlug from 'rehype-slug'
 import rehypeHighlight from 'rehype-highlight'
@@ -24,18 +22,17 @@ function handleHTML(html: string, info: TransformerInfo) {
   return html
 }
 
-export const Home = async({ post }: { post: Qiita.Post })=>  {
+export const Home = async ({ post }: { post: Qiita.Post }) => {
   const regex = c.regex
-  const contentAfterReplaced = l.contentAfterReplaced(post,regex)
+  const contentAfterReplaced = l.contentAfterReplaced(post, regex)
   return (
-    <article className='prose pt-10 mx-auto dark:prose-invert prose-h1:text-[28px]'>
+    <article className='prose mx-auto pt-10 dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
       <CustomMDX
         source={contentAfterReplaced}
         options={{
           mdxOptions: {
             remarkPlugins: [
-              // [remark.gfm],
               [
                 remarkEmbedder,
                 {
