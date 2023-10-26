@@ -11,7 +11,7 @@ const toStoreThemeToLocalStorage = (theme: LocalStorageTheme) => {
   localStorage.setItem('theme', theme)
 }
 
-export default function ThemeToggleButton() {
+export const ThemeToggleButton = () => {
   const [theme, setTheme] = useState(true)
   return (
     <button
