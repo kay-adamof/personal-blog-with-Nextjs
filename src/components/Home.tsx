@@ -11,25 +11,13 @@ import * as c from '@/constants'
 import * as l from '@/lib'
 import * as config from '@/config'
 
-function handleHTML(html: string, info: TransformerInfo) {
-  const { url, transformer } = info
-  const twitter = `${html}`
-
-  if (transformer.name === '@remark-embedder/transformer-oembed') {
-    if (url.includes('youtube.com')) return `${html}`
-    if (url.includes('twitter.com')) return twitter
-  }
-  return html
-}
-
 export const Home = async ({ post }: { post: Qiita.Post }) => {
-  const regex = c.regex
-  const contentAfterReplaced = l.contentAfterReplaced(post, regex)
+  const content = l.contentAfterReplaced(post, c.regex)
   return (
     <article className='prose mx-auto pt-10 dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
       <CustomMDX
-        source={contentAfterReplaced}
+        source={content}
         options={{
           mdxOptions: {
             remarkPlugins: [
@@ -39,7 +27,7 @@ export const Home = async ({ post }: { post: Qiita.Post }) => {
                   transformers: [
                     [remarkEmbedderTransformerOembed, config.oembed],
                   ],
-                  handleHTML,
+                  handleHTML:l.handleHTML,
                 },
               ],
             ],
