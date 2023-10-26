@@ -1,3 +1,4 @@
+export * from './handleHTML'
 export * from './contentAfterReplaced'
 export * from './getOembed'
 export * from './getDataTheme'
