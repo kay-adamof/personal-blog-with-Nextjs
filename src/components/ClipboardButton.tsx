@@ -1,19 +1,19 @@
 'use client'
-import { useState } from 'react'
-import CopyLinerIcon from './CopyLinerIcon'
-import CheckLinerIcon from './CheckLinerIcon'
 
-const className = {
-  button: 'text-white/70 hover:text-white',
-}
+import { ReactNode, useState } from 'react'
+// import CopyLinerIcon from './CopyLinerIcon'
+// import CheckLinerIcon from './CheckLinerIcon'
 
-export default () => {
+export const ClipboardButton = (props: {
+  IconOnClicked: ReactNode
+  IconOnNotClicked: ReactNode
+}) => {
   const [isClicked, setIsClicked] = useState(false)
 
   return (
     <>
       <button
-        className={className.button}
+        className='text-white/70 hover:text-white'
         onClick={e => {
           const target = e.currentTarget
           const pre = target.closest('pre')
@@ -43,7 +43,7 @@ export default () => {
           }
         }}
       >
-        {isClicked ? <CheckLinerIcon /> : <CopyLinerIcon />}
+        {isClicked ? props.IconOnClicked : props.IconOnNotClicked}
       </button>
     </>
   )

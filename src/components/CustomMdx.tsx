@@ -1,8 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
-import * as S from '@server_components'
-import getOembedProvidersUrls from '@/lib/getOembedProvidersUrls'
-import isUrl from '@/lib/isUrl'
+import { Code } from './Code'
+import { getOembedProvidersUrl } from '@/lib/getOembedProvidersUrls'
+import { isUrl } from '@/lib/isUrl'
 import urlMetadata from 'url-metadata'
 import Image from 'next/image'
 import { KeyOfMetadata } from '@/types/KeyOfMetadata'
@@ -45,7 +45,7 @@ const Anchor = async (
   if (!isUrl(props.href)) return DefaultAnchor(props)
 
   const url = new URL(props.href)
-  const oembedProviderUrls = await getOembedProvidersUrls()
+  const oembedProviderUrls = await getOembedProvidersUrl()
   const hasUrlOfOembedProvider = (urls: string[]) => {
     return urls
       .map(providerUrl => providerUrl.includes(url.hostname))
@@ -65,14 +65,14 @@ const Anchor = async (
 }
 
 const components = {
-  code: S.Code,
+  code: Code,
   a: Anchor,
   p: (props: HTMLAttributes<'div'>) => (
     <div className='my-5'>{props.children}</div>
   ),
 }
 
-export function CustomMDX(props: any) {
+export const CustomMDX = (props: any) => {
   return (
     <MDXRemote
       {...props}

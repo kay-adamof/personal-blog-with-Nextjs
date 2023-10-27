@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-export default (props: HTMLAttributes<HTMLElement>) => {
+export const getLang = (props: HTMLAttributes<HTMLElement>) => {
   if (props.className) {
     const hasLang = props.className.includes('language-')
     if (hasLang) {

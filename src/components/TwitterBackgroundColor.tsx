@@ -12,7 +12,7 @@ const handleLoad = () => {
   })
 }
 
-export default () => {
+export const TwitterBackgroundColor = () => {
   return (
     <>
       <Script

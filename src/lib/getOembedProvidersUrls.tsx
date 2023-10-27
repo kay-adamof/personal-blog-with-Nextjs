@@ -1,6 +1,6 @@
 import { Provider } from "@/types/Provider"
 
-export default async () => {
+export const getOembedProvidersUrl = async () => {
   const res = await fetch('https://oembed.com/providers.json')
   if (!res.ok) {
     throw new Error('Failed to fetch data')

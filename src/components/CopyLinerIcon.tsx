@@ -1,7 +1,8 @@
+'use client'
 import { IconSvgProps } from "@/types/IconSvgProps";
 import iconSize from "@/constants/iconSize";
 
-export default (props: IconSvgProps) => (
+export const CopyLinerIcon =  (props: IconSvgProps) => (
   <svg
     aria-hidden="true"
     fill="none"

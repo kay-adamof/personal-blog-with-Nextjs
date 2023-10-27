@@ -1,6 +1,5 @@
 'use client'
-
-export default ({ children }: { children: React.ReactNode }) => {
+export const ScrollToTop = ({ children }: { children: React.ReactNode }) => {
   return (
     <button
       aria-hidden='true'

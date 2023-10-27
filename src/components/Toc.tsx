@@ -4,19 +4,19 @@ import rehypeSlug from 'rehype-slug'
 import rehypeReact from 'rehype-react'
 import rehypeStringify from 'rehype-stringify'
 import { toc } from '@jsdevtools/rehype-toc'
-import { Qiita } from '@/types'
+import { Post } from '@/types/qiita.schema.types'
 import * as prod from 'react/jsx-runtime'
 
 // @ts-expect-error: the react types are missing.
 const production = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs }
 
-export default async ({
+export const Toc = async ({
   children,
   post,
 }: {
   children: React.ReactNode
-  post: Qiita.Post
-})=> {
+  post: Post
+}) => {
   const file = await unified()
     .use(rehypeParse)
     .use(rehypeSlug)

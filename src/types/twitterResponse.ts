@@ -1,4 +1,3 @@
-import * as CT from '@/constants'
-
-export type TweetInfo = typeof CT.tweetInfo
+import { tweetInfo } from '@/constants/twitterResponse'
+export type TweetInfo = typeof tweetInfo
 

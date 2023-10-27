@@ -1,10 +1,12 @@
-import getPost from '@/lib/getPost'
-import ScrollToTop from '@/components/ScrollToTop'
-import { Qiita } from '@/types'
-import Toc from '@/components/Toc'
-import * as S from '@server_components'
-import * as C from '@client_components'
+import { getPost } from '@/lib/getPost'
+import { Post } from '@/types/qiita.schema.types'
+import { Navbar } from '@/components/Navbar'
+import { ThemeToggleButton } from '@/components/ToggleThemeButton'
+import { ToggleTocButton } from '@/components/ToggleTocButton'
 import { Home } from '@/components/Home'
+import { Toc } from '@/components/Toc'
+import { ScrollToTop } from '@/components/ScrollToTop'
+import { GoToRoot } from '@/components/GoToRoot'
 
 export default async ({
   params: { postId },
@@ -13,14 +15,14 @@ export default async ({
     postId: string
   }
 }) => {
-  const post: Qiita.Post = await getPost(postId)
+  const post: Post = await getPost(postId)
 
   return (
     <>
-      <S.Navbar
-        left={<S.LinkToRoot />}
-        ToggleThemeButton={<C.ThemeToggleButton />}
-        ToggleTocButton={<S.ToggleTocButton />}
+      <Navbar
+        left={<GoToRoot />}
+        ToggleThemeButton={<ThemeToggleButton />}
+        ToggleTocButton={<ToggleTocButton />}
       />
       <main className='container mx-auto px-6'>
         <Home post={post} />

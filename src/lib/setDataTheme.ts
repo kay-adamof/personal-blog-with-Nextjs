@@ -1,3 +1,3 @@
-import { MyTheme } from "@/types";
+import { MyTheme } from "@/types/MyTheme";
 
-export default (theme:MyTheme) => document.documentElement.setAttribute('data-theme', theme)
+export const setDataTheme = (theme: MyTheme) => document.documentElement.setAttribute('data-theme', theme)

@@ -1,11 +1,11 @@
 'use client'
 
-import setDataTheme from '@/lib/setDataTheme'
+import { setDataTheme } from '@/lib/setDataTheme'
 import { LocalStorageTheme } from '@/types/LocalStorageTheme'
 import { TbMoonStars, TbSunHigh } from 'react-icons/tb'
 import { IconContext } from 'react-icons'
 import { useState } from 'react'
-import * as L from '@/lib'
+import { getDataTheme } from '@/lib/getDataTheme'
 
 const toStoreThemeToLocalStorage = (theme: LocalStorageTheme) => {
   localStorage.setItem('theme', theme)
@@ -16,7 +16,7 @@ export const ThemeToggleButton = () => {
   return (
     <button
       onClick={() => {
-        const dataTheme = L.getDataTheme()
+        const dataTheme = getDataTheme()
         setTheme(!theme)
 
         if (dataTheme === 'lemonade') {
@@ -30,7 +30,7 @@ export const ThemeToggleButton = () => {
       }}
     >
       <IconContext.Provider value={{ size: '1.8rem' }}>
-        {L.getDataTheme() === 'night' ? <TbMoonStars /> : <TbSunHigh />}
+        {getDataTheme() === 'night' ? <TbMoonStars /> : <TbSunHigh />}
       </IconContext.Provider>
     </button>
   )

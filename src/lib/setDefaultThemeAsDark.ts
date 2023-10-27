@@ -1,1 +1,1 @@
-export default ()=>localStorage.setItem('theme','dark')
+export const setDefaultThemeAsDark = () => localStorage.setItem('theme', 'dark')

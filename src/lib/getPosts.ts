@@ -1,9 +1,8 @@
-import * as T from '@/types'
-import * as CT from '@/constants'
-import type { Qiita } from '@/types'
+import { itemsUrl } from '@/constants/url'
+import { Post } from '@/types/qiita.schema.types'
 
 export default async () => {
-  const res = await fetch(CT.itemsUrl,{ next: { revalidate: 3600 } })
-  const posts: Qiita.Post[] = await res.json()
+  const res = await fetch(itemsUrl,{ next: { revalidate: 3600 } })
+  const posts: Post[] = await res.json()
   return posts
 }

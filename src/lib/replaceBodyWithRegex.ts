@@ -1,6 +1,7 @@
-import * as T from '@/types'
+import { Post } from '@/types/qiita.schema.types'
+import { urlRegex } from '@/types/urlRegex'
 
-export const contentAfterReplaced = (post: T.Qiita.Post, regex: T.urlRegex) =>
+const contentAfterReplaced = (post: Post, regex: urlRegex) =>
   post.body
     .replace(regex.Url, '\n[$1]($1)') // Make url markdown sytle
     .replace(regex.Xcom, 'https://twitter.com') // Let the twitter widget.js recognize url
