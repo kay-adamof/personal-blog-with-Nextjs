@@ -1,4 +1,3 @@
-'use client'
 import { IconContext } from 'react-icons'
 
 export const IconPropvider = ({ children }: { children: React.ReactNode }) => (

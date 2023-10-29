@@ -1,4 +1,3 @@
-'use client'
 import { IconContext } from 'react-icons'
 import { TbSunHigh } from 'react-icons/tb'
 

@@ -1,40 +1,36 @@
-import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core'
-import remarkEmbedderTransformerOembed from '@remark-embedder/transformer-oembed'
-import rehypeSlug from 'rehype-slug'
-import rehypeHighlight from 'rehype-highlight'
+import * as rehype from '@/lib/rehypeWrapper'
+import * as remark from '@/lib/remarkWrapper'
+import * as lib from '@/lib'
+import * as S from '@server_components'
 import 'highlight.js/styles/night-owl.css'
 import { Post } from '@/types/qiita.schema.types'
-import { CustomMDX } from '@/components/CustomMdx'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { regex } from '@/constants/regex'
-import { contentAfterReplaced } from '@/lib/contentAfterReplaced'
-import { handleHTML } from '@/lib/handleHTML'
 import { oembed } from '@/config/oembed'
 
 export const Home = ({ post }: { post: Post }) => {
-  const content = contentAfterReplaced(post, regex)
+  const content = lib.contentAfterReplaced(post, regex)
   return (
     <article className='prose mx-auto pt-10 dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
-      <CustomMDX
+      <S.CustomMDX
         source={content}
         options={{
           mdxOptions: {
             remarkPlugins: [
               [
-                remarkEmbedder,
+                remark.embedder,
                 {
                   transformers: [
-                    [remarkEmbedderTransformerOembed, oembed],
+                    [remark.transformer, oembed],
                   ],
-                  handleHTML: handleHTML,
+                  handleHTML: lib.handleHTML,
                 },
               ],
             ],
             rehypePlugins: [
               [
-                rehypeHighlight,
+                rehype.highlight,
                 {
                   ignoreMissing: true,
                   languages: {
@@ -43,8 +39,8 @@ export const Home = ({ post }: { post: Post }) => {
                   aliases: { dockerfile: 'docker', docker: 'dockerfile' },
                 },
               ],
-              rehypeSlug,
-              [rehypeAutolinkHeadings, { behaviors: 'wrap' }],
+              rehype.slug,
+              [rehype.autolinkHeadings, { behaviors: 'wrap' }],
             ],
           },
         }}

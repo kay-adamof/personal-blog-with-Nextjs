@@ -1,8 +1,5 @@
 import { unified } from 'unified'
-import rehypeParse from 'rehype-parse'
-import rehypeSlug from 'rehype-slug'
-import rehypeReact from 'rehype-react'
-import rehypeStringify from 'rehype-stringify'
+import * as rehype from '@/lib/rehypeWrapper'
 import { toc } from '@jsdevtools/rehype-toc'
 import { Post } from '@/types/qiita.schema.types'
 import * as prod from 'react/jsx-runtime'
@@ -18,21 +15,21 @@ export const Toc = async ({
   post: Post
 }) => {
   const file = await unified()
-    .use(rehypeParse)
-    .use(rehypeSlug)
+    .use(rehype.parse)
+    .use(rehype.slug)
     // @ts-expect-error
     .use(toc, {
       headings: ['h1', 'h2'],
     })
-    .use(rehypeStringify)
+    .use(rehype.stringify)
     .process(post.rendered_body)
 
   // @ts-expect-error
   const navElement = file.value.match(/<nav[\s\S]*nav>/)[0]
 
   const navContent = await unified()
-    .use(rehypeParse, { fragment: true })
-    .use(rehypeReact, production)
+    .use(rehype.parse, { fragment: true })
+    .use(rehype.react, production)
     .process(navElement)
 
   return (

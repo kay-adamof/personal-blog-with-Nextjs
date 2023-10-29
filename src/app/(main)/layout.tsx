@@ -1,8 +1,8 @@
-import '@/app/globals.css'
+import './globals.css'
 import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
 import 'devicon/devicon.min.css'
-import { ThemeSetter } from '@/components/ThemeSetter'
+import * as C from '@client_components'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +18,9 @@ export default ({ children }: { children: React.ReactNode }) => {
       data-theme='night'
     >
       <body className=''>
-        <ThemeSetter>
+        <C.ThemeSetter>
           {children}
-        </ThemeSetter>
+        </C.ThemeSetter>
       </body>
     </html>
   )

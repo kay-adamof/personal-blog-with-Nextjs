@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactNode, useState } from 'react'
 // import CopyLinerIcon from './CopyLinerIcon'
 // import CheckLinerIcon from './CheckLinerIcon'

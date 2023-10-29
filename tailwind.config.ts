@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss'
 import type { Config as DaisyUiConfig } from 'daisyui'
-import * as c from './src/constants'
+import { theme } from './src/constants/theme'
 
-const myTheme = Object.values(c.theme)
+const myTheme = Object.values(theme)
 
 const daisyUiConfig: DaisyUiConfig = {
   themes: myTheme,
@@ -31,7 +31,7 @@ const config: Config = {
     },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
-  darkMode: ['class', `[data-theme="${c.theme.dark}"]`],
+  darkMode: ['class', `[data-theme="${theme.dark}"]`],
   daisyui: daisyUiConfig
 }
 

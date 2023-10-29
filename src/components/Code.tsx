@@ -1,9 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react'
 import { getLang } from '@/lib/getLang'
 import { lowerCasedAliases } from '@/constants/languageAliases'
-import { ClipboardButton } from './ClipboardButton'
-import { CheckLinerIcon } from './CheckLinerIcon'
-import { CopyLinerIcon } from './CopyLinerIcon'
+import * as C from '@client_components'
 
 export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
   let content: ReactNode = ''
@@ -28,9 +26,9 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
             />
           </div>
           <div className='navbar-end'>
-            <ClipboardButton
-              IconOnClicked={<CheckLinerIcon />}
-              IconOnNotClicked={<CopyLinerIcon />}
+            <C.ClipboardButton
+              IconOnClicked={<C.CheckLinerIcon />}
+              IconOnNotClicked={<C.CopyLinerIcon />}
             />
           </div>
         </div>

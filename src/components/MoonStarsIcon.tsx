@@ -1,4 +1,3 @@
-'use client'
 import { TbMoonStars } from 'react-icons/tb'
 import { IconContext } from 'react-icons'
 

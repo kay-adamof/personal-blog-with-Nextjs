@@ -24,6 +24,7 @@
       "@components/*": ["./src/app/(main)/_components/*"],
       "@server_components": ["./src/components/server.js"],
       "@client_components": ["./src/components/client.js"],
+      "@lib[client-only]": ["./src/lib/index.client-only.js"],
       "@experimental/*": ["./src/app/(experimental)/*"]
     }
   },

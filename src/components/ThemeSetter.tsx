@@ -1,16 +1,22 @@
-'use client'
-
 import { theme } from '@/constants/theme'
 import { useEffect } from 'react'
-import { setDataTheme } from '@/lib/setDataTheme'
-import { setDefaultThemeAsDark } from '@/lib/setDefaultThemeAsDark'
+import * as lib from '@/lib'
+import { LocalStorageTheme } from '@/types/LocalStorageTheme'
+
 
 export const ThemeSetter = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme')
-    if (storedTheme === null) setDefaultThemeAsDark()
-    if (storedTheme === 'light') setDataTheme(theme.light)
-    if (storedTheme === 'dark') setDataTheme(theme.dark)
+    let storedTheme = localStorage.getItem(
+      'theme',
+    ) as LocalStorageTheme | null
+
+    if (storedTheme === null) {
+      lib.setDefaultThemeAsDark()
+      storedTheme = 'dark'
+    }
+
+    if (storedTheme === 'light') lib.setDataTheme(theme.light)
+    if (storedTheme === 'dark') lib.setDataTheme(theme.dark)
   }, [])
   return <>{children}</>
 }

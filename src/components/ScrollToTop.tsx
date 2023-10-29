@@ -1,4 +1,3 @@
-'use client'
 export const ScrollToTop = ({ children }: { children: React.ReactNode }) => {
   return (
     <button

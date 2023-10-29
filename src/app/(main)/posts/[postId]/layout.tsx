@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './global.css'
-import { TwitterBackgroundColor } from '@/components/TwitterBackgroundColor'
-
+import * as C from '@client_components'
 
 export const metadata: Metadata = {
   title: 'next-mdx-remote experimental',
@@ -16,7 +15,7 @@ export default function PostLayout({
   return (
     <>
       {children}
-      <TwitterBackgroundColor />
+      <C.TwitterBackgroundColor />
     </>
   )
 }

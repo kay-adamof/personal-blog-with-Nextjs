@@ -1,4 +1,3 @@
-'use client'
 import { IconSvgProps } from '@/types/IconSvgProps';
 import iconSize from '@/constants/iconSize';
 
