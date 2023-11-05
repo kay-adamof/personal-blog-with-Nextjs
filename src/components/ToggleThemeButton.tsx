@@ -1,40 +1,46 @@
 import { LocalStorageTheme } from '@/types/LocalStorageTheme'
 import { TbMoonStars, TbSunHigh } from 'react-icons/tb'
 import { IconContext } from 'react-icons'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import * as lib from '@/lib'
 import * as T from '@/types'
+import * as lc from '@lib[client-only]'
 
-const toStoreThemeToLocalStorage = (theme: LocalStorageTheme) => {
-  localStorage.setItem('theme', theme)
-}
 
 export const ThemeToggleButton = () => {
-  const [theme, setTheme] = useState<T.MyTheme>('night')
+  const [theme, setTheme] = useState<T.LocalStorageTheme>('dark')
 
   useEffect(() => {
-    lib.local()
+    setTheme(lc.getThemeInLocalStorage() as T.LocalStorageTheme)
   }, [])
 
   return (
     <button
       onClick={() => {
-        const dataTheme = lib.getDataTheme()
-        setTheme(!theme)
-
-        if (dataTheme === 'lemonade') {
-          lib.setDataTheme('night')
-          toStoreThemeToLocalStorage('dark')
-        }
-        if (dataTheme === 'night') {
-          lib.setDataTheme('lemonade')
-          toStoreThemeToLocalStorage('light')
-        }
+        setTheme(theme === ('dark' || null) ? 'light' : 'dark')
+        setAndStoreTheme[theme]()
       }}
     >
-      {/* <IconContext.Provider value={{ size: '1.8rem' }}> */}
-      {/*   {lib.getDataTheme() === 'night' ? <TbMoonStars /> : <TbSunHigh />} */}
-      {/* </IconContext.Provider> */}
+      <IconContext.Provider value={{ size: '1.8rem' }}>
+        {theme === 'dark' ? <TbMoonStars /> : <TbSunHigh />}
+      </IconContext.Provider>
     </button>
   )
 }
+
+
+const toStoreThemeToLocalStorage = (theme: LocalStorageTheme) => {
+  localStorage.setItem('theme', theme)
+}
+
+const setAndStoreTheme: Record<T.LocalStorageTheme, () => void> = {
+  dark: () => {
+    lib.setDataTheme('lemonade')
+    toStoreThemeToLocalStorage('light')
+  },
+  light: () => {
+    lib.setDataTheme('night')
+    toStoreThemeToLocalStorage('dark')
+  },
+}
+

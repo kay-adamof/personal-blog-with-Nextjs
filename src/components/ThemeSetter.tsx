@@ -1,14 +1,12 @@
 import { theme } from '@/constants/theme'
 import { useEffect } from 'react'
 import * as lib from '@/lib'
-import { LocalStorageTheme } from '@/types/LocalStorageTheme'
+import * as lc from '@lib[client-only]'
 
 
 export const ThemeSetter = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    let storedTheme = localStorage.getItem(
-      'theme',
-    ) as LocalStorageTheme | null
+    let storedTheme = lc.getThemeInLocalStorage()
 
     if (storedTheme === null) {
       lib.setDefaultThemeAsDark()
