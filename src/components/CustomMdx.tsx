@@ -1,5 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import React, { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
+import React, { AnchorHTMLAttributes, HTMLAttributes } from 'react'
 import * as S from '@server_components'
 import * as lib from '@/lib'
 import urlMetadata from 'url-metadata'
@@ -24,8 +24,8 @@ const BookmarkCard = (meta: (str: KeyOfMetadata) => string): JSX.Element => (
           alt=''
         />
       </figure>
-      <div className='card-body prose prose-sm dark:bg-slate-950'>
-        <h2 className='card-title p-0 m-0'>{meta('og:title')}</h2>
+      <div className='prose prose-sm card-body dark:bg-slate-950'>
+        <h2 className='card-title m-0 p-0'>{meta('og:title')}</h2>
         <p>{meta('og:description')}</p>
       </div>
     </div>

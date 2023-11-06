@@ -17,7 +17,6 @@ export const Toc = async ({
   const file = await unified()
     .use(rehype.parse)
     .use(rehype.slug)
-    // @ts-expect-error
     .use(toc, {
       headings: ['h1', 'h2'],
     })
