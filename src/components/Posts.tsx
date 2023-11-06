@@ -13,7 +13,7 @@ export const Posts = async () => {
             key={post.id}
             className=''
           >
-            <Link href={`http://localhost:3000/posts/${post.id}`}>
+            <Link href={`/posts/${post.id}`}>
               {post.title}
             </Link>
           </div>
