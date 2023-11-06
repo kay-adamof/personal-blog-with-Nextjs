@@ -1,4 +1,4 @@
-export default {
+export const metadataExample = {
   url: 'https://www.openssl.org/blog/blog/2021/09/07/OpenSSL3.Final/',
   canonical: 'https://www.openssl.org/blog/blog/2021/09/07/OpenSSL3.Final',
   title: 'OpenSSL 3.0 Has Been Released! - OpenSSL Blog',

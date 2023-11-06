@@ -1,1 +1,1 @@
-export default "1.8em"
+export const iconSize = "1.8em"
