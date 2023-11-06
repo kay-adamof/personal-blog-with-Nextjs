@@ -1,4 +1,4 @@
-import path from 'path'
+// import path from 'path'
 import fetch from 'make-fetch-happen'
 
 fetch.defaults({
