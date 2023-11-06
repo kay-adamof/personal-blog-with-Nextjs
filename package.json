@@ -7,12 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "install:markdown-related-packages": "pnpm i highlight.js rehype-highlight rehype-autolink-headings react-markdown remark-toc rehype-slug",
-    "install:UI": "pnpm i @floating-ui/react",
-    "install:code-hike": "pnpm i @code-hike/mdx",
-    "pt": "pnpm exec prettier . -w",
-    "pt-check": "pnpm exec prettier . -c"
+    "lint": "next lint"
   },
   "dependencies": {
     "@agentofuser/remark-oembed": "^1.0.4",
