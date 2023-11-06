@@ -4,13 +4,13 @@ import { Post } from '@/types/qiita.schema.types'
 import * as S from '@server_components'
 import * as C from '@client_components'
 
-export default async ({
+export default async function PostPage({
   params: { postId },
 }: {
   params: {
     postId: string
   }
-}) => {
+}){
   const post: Post = await getPost(postId)
 
   return (

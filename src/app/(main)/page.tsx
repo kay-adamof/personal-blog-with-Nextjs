@@ -7,7 +7,7 @@ import * as S from '@server_components'
 import * as C from '@client_components'
 
 
-export default () => {
+export default function RootPage(){
   return (
     <>
       <S.Navbar
