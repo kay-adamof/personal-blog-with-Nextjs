@@ -36,53 +36,22 @@ export const Code = (props: HTMLAttributes<HTMLElement>): ReactNode => {
       </>
     )
   }
-  // switch (codeType) {
-  //   case 'fenced':
-  //     let lang = getLang(props)
-  //     if (!lang) lang = ''
-  //     const langAliase = lowerCasedAliases[lang]
-  //     content = (
-  //       <>
-  //         <div className='navbar'>
-  //           <div className='navbar-start'>
-  //             <S.LangBadge
-  //               lang={langAliase}
-  //               langIcon={<i className={`devicon-${langAliase}-original colored`}></i>}
-  //             />
-  //           </div>
-  //           <div className='navbar-end'>
-  //             <C.ClipboardButton />
-  //           </div>
-  //         </div>
-  //         <code {...props}>{props.children}</code>
-  //       </>
-  //     )
-  //     break
-  //
-  //   case 'inline':
-  //     content = (
-  //       <>
-  //         <span className='relative'>
-  //           <span
-  //             className='absolute -inset-0.5 mx-0.5 block'
-  //             aria-hidden='true'
-  //           ></span>
-  //           <code className="relative before:mr-1 before:content-[''] after:ml-1 after:content-['']">
-  //             {props.children}
-  //           </code>
-  //         </span>
-  //       </>
-  //     )
-  //     break
-  //   default:
-  //     content = (
-  //       <>
-  //         <code {...props} />
-  //       </>
-  //     )
-  //
-  //     break
-  // }
+
+  if (codeType === 'inline') {
+    content = (
+      <>
+        <span className='relative'>
+          <span
+            className='absolute -inset-0.5 mx-0.5 block'
+            aria-hidden='true'
+          ></span>
+          <code className="relative before:mr-1 before:content-[''] after:ml-1 after:content-['']">
+            {props.children}
+          </code>
+        </span>
+      </>
+    )
+  }
 
   return content
 }
