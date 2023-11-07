@@ -5,6 +5,7 @@ import * as lib from '@/lib'
 import urlMetadata from 'url-metadata'
 import Image from 'next/image'
 import { KeyOfMetadata } from '@/types/KeyOfMetadata'
+import { Tweet } from 'react-tweet'
 
 const getMeta =
   (metaData: Awaited<ReturnType<typeof urlMetadata>>) =>
@@ -64,6 +65,7 @@ const Anchor = async (
 }
 
 const components = {
+  Tweet: Tweet,
   code: S.Code,
   a: Anchor,
   p: (props: HTMLAttributes<'div'>) => (

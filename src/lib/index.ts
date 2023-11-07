@@ -8,4 +8,5 @@ export { isUrl } from './isUrl'
 export { getPosts } from './getPosts'
 export { setDataTheme } from './setDataTheme'
 export { setDefaultThemeAsDark } from './setDefaultThemeAsDark'
+export { makeReactTweet } from './makeReactTweet'
 
