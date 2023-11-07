@@ -21,9 +21,7 @@ export const Home = ({ post }: { post: Post }) => {
               [
                 remark.embedder,
                 {
-                  transformers: [
-                    [remark.transformer, oembed],
-                  ],
+                  transformers: [[remark.transformer, oembed]],
                   handleHTML: lib.handleHTML,
                 },
               ],
