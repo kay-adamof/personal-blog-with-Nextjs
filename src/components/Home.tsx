@@ -1,15 +1,15 @@
 import * as rehype from '@/lib/rehypeWrapper'
 import * as remark from '@/lib/remarkWrapper'
-import * as lib from '@/lib'
+import * as L from '@/lib'
 import * as S from '@server_components'
+import * as T from '@/types'
 import 'highlight.js/styles/night-owl.css'
-import { Post } from '@/types/qiita.schema.types'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
-import { regex } from '@/constants/regex'
 import { oembed } from '@/config/oembed'
 
-export const Home = ({ post }: { post: Post }) => {
-  const content = lib.contentAfterReplaced(post, regex)
+export const Home = async ({ post }: { post: T.Post }) => {
+  const content = await L.contentAfterReplaced({ post: post })
+
   return (
     <article className='prose mx-auto pt-10 dark:prose-invert prose-h1:text-[28px]'>
       <h1>{post.title}</h1>
@@ -22,7 +22,7 @@ export const Home = ({ post }: { post: Post }) => {
                 remark.embedder,
                 {
                   transformers: [[remark.transformer, oembed]],
-                  handleHTML: lib.handleHTML,
+                  handleHTML: L.handleHTML,
                 },
               ],
             ],

@@ -1,6 +1,5 @@
 import { getPost } from '@/lib/getPost'
-import * as lib from '@/lib'
-import { Post } from '@/types/qiita.schema.types'
+import * as T from '@/types'
 import * as S from '@server_components'
 import * as C from '@client_components'
 
@@ -11,7 +10,7 @@ export default async function PostPage({
     postId: string
   }
 }){
-  const post: Post = await getPost(postId)
+  const post: T.Post = await getPost(postId)
 
   return (
     <>

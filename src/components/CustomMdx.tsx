@@ -1,20 +1,20 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import React, { AnchorHTMLAttributes, HTMLAttributes } from 'react'
 import * as S from '@server_components'
+import * as T from '@/types'
 import * as lib from '@/lib'
 import urlMetadata from 'url-metadata'
 import Image from 'next/image'
-import { KeyOfMetadata } from '@/types/KeyOfMetadata'
 import { Tweet } from 'react-tweet'
 
 const getMeta =
   (metaData: Awaited<ReturnType<typeof urlMetadata>>) =>
-    (str: KeyOfMetadata) => {
+    (str: T.KeyOfMetadata) => {
       const data = metaData[str]
       return typeof data === 'string' ? data : ''
     }
 
-const BookmarkCard = (meta: (str: KeyOfMetadata) => string): JSX.Element => (
+const BookmarkCard = (meta: (str: T.KeyOfMetadata) => string): JSX.Element => (
   <>
     <div className='card shadow-xl md:card-side'>
       <figure className='mb-0'>
@@ -65,13 +65,14 @@ const Anchor = async (
 }
 
 const components = {
+  CardStyleLink: S.CardStyleLink,
   Tweet: Tweet,
   code: S.Code,
   a: Anchor,
   p: (props: HTMLAttributes<'div'>) => (
     <div className='my-5'>{props.children}</div>
   ),
-}
+} satisfies { [k in T.ComponentName]: any }
 
 export const CustomMDX = (props: any) => {
   return (

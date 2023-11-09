@@ -1,3 +1,7 @@
+import { getMeta } from './getMeta'
+import { makeComponent } from './makeComponent'
+import { replaceAsync } from './replaceAsync'
+
 export { handleHTML } from './handleHTML'
 export { contentAfterReplaced } from './contentAfterReplaced'
 export { getOEmbed } from './getOembed'
@@ -9,4 +13,8 @@ export { getPosts } from './getPosts'
 export { setDataTheme } from './setDataTheme'
 export { setDefaultThemeAsDark } from './setDefaultThemeAsDark'
 export { makeReactTweet } from './makeReactTweet'
-
+export { hasUrlOfOembedProvider } from './hasUrlOfOembedProvider'
+export { makeCardStyleLink } from './makeCardStyleLink'
+export { getMeta }
+export { makeComponent }
+export { replaceAsync }
