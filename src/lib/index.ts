@@ -18,3 +18,4 @@ export { makeCardStyleLink } from './makeCardStyleLink'
 export { getMeta }
 export { makeComponent }
 export { replaceAsync }
+export * from './getPost'

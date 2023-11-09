@@ -1,5 +1,4 @@
-import { getPost } from '@/lib/getPost'
-import * as T from '@/types'
+import * as L from '@/lib'
 import * as S from '@server_components'
 import * as C from '@client_components'
 
@@ -10,7 +9,8 @@ export default async function PostPage({
     postId: string
   }
 }){
-  const post: T.Post = await getPost(postId)
+  
+  const post = await L.getPost(postId)
 
   return (
     <>
