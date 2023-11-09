@@ -7,6 +7,32 @@ import 'highlight.js/styles/night-owl.css'
 import langDockerfile from 'highlight.js/lib/languages/dockerfile'
 import { oembed } from '@/config/oembed'
 
+const options = {
+  remark: [
+    [
+      remark.embedder,
+      {
+        transformers: [[ remark.transformer ,oembed]],
+      },
+    ],
+  ],
+
+  rehype: [
+    [
+      rehype.highlight,
+      {
+        ignoreMissing: true,
+        languages: {
+          dockerfile: langDockerfile,
+        },
+        aliases: { dockerfile: 'docker', docker: 'dockerfile' },
+      },
+    ],
+    rehype.slug,
+    [rehype.autolinkHeadings, { behaviors: 'wrap' }],
+  ],
+}
+
 export const Home = async ({ post }: { post: T.Post }) => {
   const content = await L.contentAfterReplaced({ post: post })
 
@@ -17,29 +43,8 @@ export const Home = async ({ post }: { post: T.Post }) => {
         source={content}
         options={{
           mdxOptions: {
-            remarkPlugins: [
-              [
-                remark.embedder,
-                {
-                  transformers: [[remark.transformer, oembed]],
-                  handleHTML: L.handleHTML,
-                },
-              ],
-            ],
-            rehypePlugins: [
-              [
-                rehype.highlight,
-                {
-                  ignoreMissing: true,
-                  languages: {
-                    dockerfile: langDockerfile,
-                  },
-                  aliases: { dockerfile: 'docker', docker: 'dockerfile' },
-                },
-              ],
-              rehype.slug,
-              [rehype.autolinkHeadings, { behaviors: 'wrap' }],
-            ],
+            remarkPlugins: options.remark,
+            rehypePlugins: options.rehype,
           },
         }}
       />

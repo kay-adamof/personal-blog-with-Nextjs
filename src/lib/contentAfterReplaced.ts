@@ -47,7 +47,7 @@ export const contentAfterReplaced = async (A: { post: T.Post }) => {
 
   postBody = replacer.cardStyleLink(postBody, metadataArray)
 
-  // postBody = replacer.markdownLink(postBody)
+  postBody = replacer.markdownLink(postBody)
 
   return postBody
 }
