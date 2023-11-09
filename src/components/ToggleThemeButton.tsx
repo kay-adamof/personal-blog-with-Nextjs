@@ -11,7 +11,7 @@ export const ThemeToggleButton = () => {
   return (
     <button
       onClick={() => {
-        setTheme(theme === ('dark' || null) ? 'light' : 'dark')
+        setTheme(theme === 'dark' ? 'light' : 'dark')
         setAndStoreTheme[theme]()
       }}
     >
