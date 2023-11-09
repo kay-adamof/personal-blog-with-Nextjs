@@ -5,13 +5,8 @@ import * as L from '@/lib'
 import * as T from '@/types'
 import * as LC from '@lib[client-only]'
 
-
 export const ThemeToggleButton = () => {
-  const [theme, setTheme] = R.useState<T.LocalStorageTheme>('dark')
-
-  R.useEffect(() => {
-    setTheme(LC.getThemeInLocalStorage() as T.LocalStorageTheme)
-  }, [])
+  const [theme, setTheme] = R.useState(LC.getThemeInLocalStorage())
 
   return (
     <button
@@ -27,7 +22,6 @@ export const ThemeToggleButton = () => {
   )
 }
 
-
 const toStoreThemeToLocalStorage = (theme: T.LocalStorageTheme) => {
   localStorage.setItem('theme', theme)
 }
@@ -42,4 +36,3 @@ const setAndStoreTheme: Record<T.LocalStorageTheme, () => void> = {
     toStoreThemeToLocalStorage('dark')
   },
 }
-
