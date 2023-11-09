@@ -2,77 +2,16 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import React, { AnchorHTMLAttributes, HTMLAttributes } from 'react'
 import * as S from '@server_components'
 import * as T from '@/types'
-import * as lib from '@/lib'
-import urlMetadata from 'url-metadata'
-import Image from 'next/image'
 import { Tweet } from 'react-tweet'
-
-const getMeta =
-  (metaData: Awaited<ReturnType<typeof urlMetadata>>) =>
-    (str: T.KeyOfMetadata) => {
-      const data = metaData[str]
-      return typeof data === 'string' ? data : ''
-    }
-
-const BookmarkCard = (meta: (str: T.KeyOfMetadata) => string): JSX.Element => (
-  <>
-    <div className='card shadow-xl md:card-side'>
-      <figure className='mb-0'>
-        <Image
-          src={meta('og:image')}
-          width={1200}
-          height={630}
-          alt=''
-        />
-      </figure>
-      <div className='prose prose-sm card-body dark:bg-slate-950'>
-        <h2 className='card-title m-0 p-0'>{meta('og:title')}</h2>
-        <p>{meta('og:description')}</p>
-      </div>
-    </div>
-  </>
-)
-
-const DefaultAnchor = (
-  props: AnchorHTMLAttributes<HTMLAnchorElement>,
-): JSX.Element => <a {...props} />
-
-const Anchor = async (
-  props: AnchorHTMLAttributes<HTMLAnchorElement>,
-): Promise<JSX.Element | string> => {
-  if (!props.href) return DefaultAnchor(props)
-
-  if (!lib.isUrl(props.href)) return DefaultAnchor(props)
-
-  const url = new URL(props.href)
-  const oembedProviderUrls = await lib.getOembedProvidersUrl()
-  const hasUrlOfOembedProvider = (urls: string[]) => {
-    return urls
-      .map(providerUrl => providerUrl.includes(url.hostname))
-      .some(v => v === true)
-  }
-
-  if (hasUrlOfOembedProvider(oembedProviderUrls)) return DefaultAnchor(props)
-
-  try {
-    const metaData = await urlMetadata(url.toString())
-    const meta = getMeta(metaData)
-
-    return BookmarkCard(meta)
-  } catch (error) {
-    return DefaultAnchor(props)
-  }
-}
 
 const components = {
   CardStyleLink: S.CardStyleLink,
   Tweet: Tweet,
   code: S.Code,
-  a: Anchor,
   p: (props: HTMLAttributes<'div'>) => (
     <div className='my-5'>{props.children}</div>
   ),
-} satisfies { [k in T.ComponentName]: any }
+} satisfies { [k in T.ComponentName]?: any }
 
 export const CustomMDX = (props: any) => {
   return (
