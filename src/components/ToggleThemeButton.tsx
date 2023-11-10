@@ -6,7 +6,14 @@ import * as T from '@/types'
 import * as LC from '@lib[client-only]'
 
 export const ThemeToggleButton = () => {
-  const [theme, setTheme] = R.useState(LC.getThemeInLocalStorage())
+  const [theme, setTheme] = R.useState<T.LocalStorageTheme>('dark')
+
+  R.useEffect(() => {
+    const themeInLocalStorage = LC.getThemeInLocalStorage()
+    if (theme !== themeInLocalStorage) {
+      setTheme(themeInLocalStorage)
+    }
+  }, [])
 
   return (
     <button
