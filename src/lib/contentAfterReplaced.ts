@@ -41,7 +41,9 @@ export const contentAfterReplaced = async (A: { post: T.Post }) => {
 
   const urlStrings = await getUrlStrings(postBody)
 
-  if (!urlStrings) return postBody
+  if (!urlStrings) {
+    return postBody
+  }
 
   const [...metadataArray] = await getMetadataArray(urlStrings)
 
