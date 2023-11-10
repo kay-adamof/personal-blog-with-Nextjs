@@ -32,7 +32,9 @@ const replacer = {
 }
 
 const getMetadataArray = async (urlStrings: (string | false)[]) => {
-  const promises = urlStrings.map(urlStr => urlStr && urlMetadata(urlStr))
+  const promises = urlStrings.map(
+    urlStr => urlStr && urlMetadata(urlStr, { cache: 'force-cache' }),
+  )
   const [...urlMetadataResults] = await Promise.all(promises)
   return urlMetadataResults.map(result => (result ? L.getMeta(result) : false))
 }
