@@ -23,7 +23,7 @@ export const ThemeToggleButton = () => {
         setAndStoreTheme[theme]()
       }}
     >
-        {theme === 'dark' ? <I.DarkModeIcon /> : <I.LightModeIcon />}
+        {theme === 'dark' ? <I.DarkModeIcon /> : <I.LightModeIcon2 />}
     </button>
   )
 }
