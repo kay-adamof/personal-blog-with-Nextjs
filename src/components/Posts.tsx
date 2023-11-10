@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import * as lib from '@/lib'
+import * as L from '@/lib'
 
 
 export const Posts = async () => {
-  const posts = await lib.getPosts()
+  const posts = await L.getPosts()
 
   return (
     <div className=''>
