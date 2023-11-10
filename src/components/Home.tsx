@@ -34,7 +34,9 @@ const options = {
 }
 
 export const Home = async ({ post }: { post: T.Post }) => {
+
   const content = await L.contentAfterReplaced({ post: post })
+   
 
   return (
     <article className='prose mx-auto pt-10 dark:prose-invert prose-h1:text-[28px]'>

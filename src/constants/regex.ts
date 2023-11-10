@@ -11,6 +11,8 @@ export const regex = {
     /\nhttps:\/\/twitter\.com\/[A-Za-z0-9_]+\/status\/([0-9]+)\?s=[0-9]+\n/g,
   Twitter:
     /(\[https:\/\/twitter\.com\/)([A-Za-z0-9_]+)(\/status\/[0-9]+\?s=[0-9]+\])/g,
+  children:
+    /\{\s*(children)\s*}/g,
 }
 
 export type RegexForReplacingContent = typeof regex

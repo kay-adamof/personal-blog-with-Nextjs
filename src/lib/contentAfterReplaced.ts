@@ -25,7 +25,10 @@ const replacer = {
       return data ? `<${L.makeComponent('CardStyleLink', data)} />` : match
     })
   },
-  markdownLink: (postBody: string) => postBody.replace(C.regex.Url, '\n[$1]($1)')
+  markdownLink: (postBody: string) =>
+    postBody.replace(C.regex.Url, '\n[$1]($1)'),
+  escapeRecognitionOfChildren: (postBody: string) =>
+    postBody.replace(C.regex.children, '\\{ $1 }'),
 }
 
 const getMetadataArray = async (urlStrings: (string | false)[]) => {
@@ -37,7 +40,9 @@ const getMetadataArray = async (urlStrings: (string | false)[]) => {
 export const contentAfterReplaced = async (A: { post: T.Post }) => {
   let postBody: string = A.post.body
 
-  postBody = replacer.tweet(A.post.body)
+  postBody = replacer.escapeRecognitionOfChildren(postBody)
+
+  postBody = replacer.tweet(postBody)
 
   const urlStrings = await getUrlStrings(postBody)
 
@@ -48,8 +53,6 @@ export const contentAfterReplaced = async (A: { post: T.Post }) => {
   const [...metadataArray] = await getMetadataArray(urlStrings)
 
   postBody = replacer.cardStyleLink(postBody, metadataArray)
-
-  postBody = replacer.markdownLink(postBody)
 
   return postBody
 }
