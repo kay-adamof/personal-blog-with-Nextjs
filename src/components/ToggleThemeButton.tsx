@@ -1,5 +1,4 @@
-import { TbMoonStars, TbSunHigh } from 'react-icons/tb'
-import { IconContext } from 'react-icons'
+import * as icon from '@/components/icons'
 import * as R from 'react'
 import * as L from '@/lib'
 import * as T from '@/types'
@@ -22,9 +21,7 @@ export const ThemeToggleButton = () => {
         setAndStoreTheme[theme]()
       }}
     >
-      <IconContext.Provider value={{ size: '1.8rem' }}>
-        {theme === 'dark' ? <TbMoonStars /> : <TbSunHigh />}
-      </IconContext.Provider>
+        {theme === 'dark' ? <icon.DarkModeIcon /> : <icon.LightModeIcon />}
     </button>
   )
 }
