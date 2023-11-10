@@ -1,4 +1,4 @@
-import * as icon from '@/components/icons'
+import * as I from '@/components/icons'
 import * as R from 'react'
 import * as L from '@/lib'
 import * as T from '@/types'
@@ -9,6 +9,8 @@ export const ThemeToggleButton = () => {
 
   R.useEffect(() => {
     const themeInLocalStorage = LC.getThemeInLocalStorage()
+    console.log(theme)
+    console.log(themeInLocalStorage)
     if (theme !== themeInLocalStorage) {
       setTheme(themeInLocalStorage)
     }
@@ -21,7 +23,7 @@ export const ThemeToggleButton = () => {
         setAndStoreTheme[theme]()
       }}
     >
-        {theme === 'dark' ? <icon.DarkModeIcon /> : <icon.LightModeIcon />}
+        {theme === 'dark' ? <I.DarkModeIcon /> : <I.LightModeIcon />}
     </button>
   )
 }

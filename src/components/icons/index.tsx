@@ -9,7 +9,7 @@ import {
 const size = '1.8rem' as const
 export type DefaultIconSize = typeof size
 
-const makeIcon = (IconName: (props: TablerIconsProps) => JSX.Element) => {
+const MakeIcon = (IconName: (props: TablerIconsProps) => JSX.Element) => {
   return (props: Omit<TablerIconsProps, 'size'>): JSX.Element => (
     <IconName
       size={size}
@@ -18,8 +18,8 @@ const makeIcon = (IconName: (props: TablerIconsProps) => JSX.Element) => {
   )
 }
 
-export const LightModeIcon = makeIcon(IconSun)
+export const LightModeIcon = MakeIcon(IconSun)
 
-export const DarkModeIcon = makeIcon(IconMoonStars)
+export const DarkModeIcon = MakeIcon(IconMoonStars)
 
-export const TocIcon = makeIcon(IconListTree)
+export const TocIcon = MakeIcon(IconListTree)
