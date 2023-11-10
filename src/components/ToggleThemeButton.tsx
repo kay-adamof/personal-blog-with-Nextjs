@@ -9,8 +9,6 @@ export const ThemeToggleButton = () => {
 
   R.useEffect(() => {
     const themeInLocalStorage = LC.getThemeInLocalStorage()
-    console.log(theme)
-    console.log(themeInLocalStorage)
     if (theme !== themeInLocalStorage) {
       setTheme(themeInLocalStorage)
     }
@@ -23,7 +21,7 @@ export const ThemeToggleButton = () => {
         setAndStoreTheme[theme]()
       }}
     >
-        {theme === 'dark' ? <I.DarkModeIcon /> : <I.LightModeIcon2 />}
+      {theme === 'dark' ? <I.DarkModeIcon /> : <I.LightModeIcon />}
     </button>
   )
 }
@@ -36,9 +34,11 @@ const setAndStoreTheme: Record<T.LocalStorageTheme, () => void> = {
   dark: () => {
     L.setDataTheme('lemonade')
     toStoreThemeToLocalStorage('light')
+    L.setClassInHtml('dark')
   },
   light: () => {
     L.setDataTheme('night')
     toStoreThemeToLocalStorage('dark')
+    L.setClassInHtml('light')
   },
 }

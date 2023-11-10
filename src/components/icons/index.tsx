@@ -3,18 +3,7 @@ import * as TI from '@tabler/icons-react'
 const size = '1.8rem' as const
 export type DefaultIconSize = typeof size
 
-const makeIcon = (IconName: (props: TI.TablerIconsProps) => JSX.Element) => {
-  return (props: TI.TablerIconsProps) => (
-    <IconName
-      size={size}
-      {...props}
-    />
-  )
-}
-
-export const LightModeIcon2 = makeIcon(TI.IconSunHigh)
-
-export const LightModeIcon = (props: TI.TablerIconsProps) => {
+export const LightModeIcon = (props: Omit<TI.TablerIconsProps,'size'>) => {
   return (
     <TI.IconSunHigh
       size={size}
@@ -22,7 +11,7 @@ export const LightModeIcon = (props: TI.TablerIconsProps) => {
     />
   )
 }
-export const DarkModeIcon = (props: TI.TablerIconsProps) => {
+export const DarkModeIcon = (props: Omit<TI.TablerIconsProps,'size'>) => {
   return (
     <TI.IconMoonStars
       size={size}
@@ -30,7 +19,7 @@ export const DarkModeIcon = (props: TI.TablerIconsProps) => {
     />
   )
 }
-export const TocIcon = (props: TI.TablerIconsProps) => {
+export const TocIcon = (props: Omit<TI.TablerIconsProps,'size'>) => {
   return (
     <TI.IconListTree
       size={size}
