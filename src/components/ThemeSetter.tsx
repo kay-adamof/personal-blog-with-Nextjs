@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import * as L from '@/lib'
 import * as LC from '@lib[client-only]'
 
-
 export const ThemeSetter = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     let storedTheme = LC.getThemeInLocalStorage()
@@ -14,8 +13,14 @@ export const ThemeSetter = ({ children }: { children: React.ReactNode }) => {
       storedTheme = 'dark'
     }
 
-    if (storedTheme === 'light') L.setDataTheme(theme.light)
-    if (storedTheme === 'dark') L.setDataTheme(theme.dark)
+    if (storedTheme === 'light') {
+      L.setDataTheme(theme.light)
+      document.documentElement.classList.remove('dark')
+    }
+    if (storedTheme === 'dark') {
+      L.setDataTheme(theme.dark)
+      document.documentElement.classList.add('dark')
+    }
   }, [])
   return <>{children}</>
 }
