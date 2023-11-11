@@ -11,8 +11,12 @@ export const regex = {
     /\nhttps:\/\/twitter\.com\/[A-Za-z0-9_]+\/status\/([0-9]+)\?s=[0-9]+\n/g,
   Twitter:
     /(\[https:\/\/twitter\.com\/)([A-Za-z0-9_]+)(\/status\/[0-9]+\?s=[0-9]+\])/g,
+  YouTube:
+    /(\nhttps:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9()&=]*\n)/g,
   children:
     /\{\s*(children)\s*}/g,
 }
+
+// https://www.youtube.com/watch?v=P95DuIBwnqw&t=704s
 
 export type RegexForReplacingContent = typeof regex

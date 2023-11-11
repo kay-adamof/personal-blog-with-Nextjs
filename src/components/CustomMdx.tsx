@@ -4,7 +4,9 @@ import * as S from '@server_components'
 import * as T from '@/types'
 
 const components = {
+  CardSkeleton: S.CardSkeleton,
   CardStyleLink: S.CardStyleLink,
+  Suspense: React.Suspense,
   Tweet: S.MyTweet,
   code: S.Code,
 } satisfies { [k in T.ComponentName]?: any }

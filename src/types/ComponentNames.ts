@@ -1,1 +1,8 @@
-export type ComponentName = 'CardStyleLink' | 'Tweet' | 'code' | 'a' | 'p'
+export type ComponentName =
+  | 'Suspense'
+  | 'CardSkeleton'
+  | 'CardStyleLink'
+  | 'Tweet'
+  | 'code'
+  | 'a'
+  | 'p'

@@ -20,3 +20,7 @@ export { getMeta }
 export { makeComponent }
 export { replaceAsync }
 export * from './getPost'
+export * from './getMetadataArray'
+export * from './getUrlStrings'
+export * from './replacer'
+

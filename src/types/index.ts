@@ -13,3 +13,6 @@ export type UrlMetadataResult = urlMetadata.Result
 export type replacerParams = Parameters< Parameters< typeof String.prototype.replace >[1] >
 
 export type { DefaultIconSize } from '@/components/icons'
+
+export type { getMetadataArray } from '@/lib'
+
