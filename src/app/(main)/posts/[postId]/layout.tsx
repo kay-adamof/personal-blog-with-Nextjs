@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import './global.css'
 
 export const metadata: Metadata = {
   title: 'next-mdx-remote experimental',
