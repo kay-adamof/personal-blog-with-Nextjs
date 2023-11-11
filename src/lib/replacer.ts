@@ -5,7 +5,7 @@ import * as C from '@/constants'
 
 export const replacer = {
     youtube: (str: string) =>
-      str.replace(C.regex.YouTube, (_, url) => `\n<Suspense fallback={<CardSkeleton />}></Suspense>\n`),
+      str.replace(C.regex.YouTube, (_, url) => `\n<Suspense fallback={<CardSkeleton />}>${url}</Suspense>\n`),
     tweet: (str: string) =>
       str.replace(C.regex.toGetTwitterId, (_, $1) => L.makeReactTweet($1)),
     cardStyleLink: (
