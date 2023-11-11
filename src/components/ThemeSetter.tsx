@@ -9,7 +9,8 @@ export const ThemeSetter = ({ children }: { children: React.ReactNode }) => {
     let storedTheme = LC.getThemeInLocalStorage()
 
     if (storedTheme === null) {
-      L.setDefaultThemeAsDark()
+      // L.setDefaultThemeAsDarkToLocalStorage()
+      localStorage.setItem('theme', 'dark')
       storedTheme = 'dark'
     }
 
