@@ -4,7 +4,7 @@ export const Navbar = (props: {
   left: React.ReactNode
 }) => {
   return (
-    <nav className='navbar'>
+    <nav className='navbar sticky top-0 z-40 bg-black'>
       <div className='flex-1'>{props.left}</div>
       <div className='flex-none'>
         {props.ToggleThemeButton}
