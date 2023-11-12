@@ -1,8 +1,3 @@
-// import { GoToRoot } from '@/components/GoToRoot'
-// import { ThemeToggleButton } from '@/components/ToggleThemeButton'
-// import { ToggleTocButton } from '@/components/ToggleTocButton'
-// import { Navbar } from '@/components/Navbar'
-import { Posts } from '@/components/Posts'
 import * as S from '@server_components'
 import * as C from '@client_components'
 
