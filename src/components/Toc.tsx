@@ -32,7 +32,7 @@ export const Toc = async ({
     .process(navElement)
 
   return (
-    <div>
+    <div className='prose z-50 dark:prose-invert dark:bg-black '>
       {children}
       {navContent.result}
     </div>
