@@ -20,17 +20,31 @@ export default async function PostPage({
   const post = await L.getPost(postId)
 
   return (
-    <>
-      <S.Navbar
-        left={<S.GoToRoot />}
-        ToggleThemeButton={<C.ThemeToggleButton />}
-        ToggleTocButton={<S.ToggleTocButton />}
+    <div className=''>
+      <input
+        id='my-drawer'
+        type='checkbox'
+        className='drawer-toggle'
       />
-      <main className='container mx-auto px-6'>
-        <S.Home post={post} />
-      </main>
-      <S.Toc post={post}>{}</S.Toc>
-      <C.ScrollToTop>{'Go to Top'}</C.ScrollToTop>
-    </>
+      <div className=''>
+        <S.Navbar
+          left={<S.GoToRoot />}
+          ToggleThemeButton={<C.ThemeToggleButton />}
+          ToggleTocButton={<S.ToggleTocButton />}
+        />
+        <main className='container mx-auto px-6'>
+          <S.Home post={post} />
+        </main>
+      </div>
+      <div className='drawer-side'>
+        <label
+          htmlFor='my-drawer'
+          aria-label='close sidebar'
+          className='drawer-overlay'
+        ></label>
+        <S.Toc post={post}>{}</S.Toc>
+      </div>
+      {/* <C.ScrollToTop>{'Go to Top'}</C.ScrollToTop> */}
+    </div>
   )
 }
