@@ -32,9 +32,12 @@ export default async function PostPage({
           ToggleThemeButton={<C.ThemeToggleButton />}
           ToggleTocButton={<S.ToggleTocButton />}
         />
-        <main className='container mx-auto px-6'>
-          <S.Home post={post} />
-        </main>
+        
+        <div className='flex'>
+          <main className='container mx-auto px-6'>
+            <S.Home post={post} />
+          </main>
+        </div>
       </div>
       <div className='drawer-side'>
         <label
@@ -42,7 +45,7 @@ export default async function PostPage({
           aria-label='close sidebar'
           className='drawer-overlay'
         ></label>
-        <S.Toc post={post}>{}</S.Toc>
+        <S.Toc post={post}>Table of Contents</S.Toc>
       </div>
       {/* <C.ScrollToTop>{'Go to Top'}</C.ScrollToTop> */}
     </div>

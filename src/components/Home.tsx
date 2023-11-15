@@ -52,3 +52,4 @@ export const Home = async ({ post }: { post: T.Post }) => {
     </article>
   )
 }
+
