@@ -21,18 +21,13 @@ export default async function PostPage({
 
   return (
     <div className=''>
-      <input
-        id='my-drawer'
-        type='checkbox'
-        className='drawer-toggle'
-      />
+      <S.DrawerState />
       <div className=''>
         <S.Navbar
           left={<S.GoToRoot />}
           ToggleThemeButton={<C.ThemeToggleButton />}
           ToggleTocButton={<S.ToggleTocButton />}
         />
-        
         <div className='flex'>
           <main className='container mx-auto px-6'>
             <S.Home post={post} />
