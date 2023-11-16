@@ -16,16 +16,3 @@ export const CloseDrawer = ({ children }: { children: React.ReactNode }) => {
    {children} 
   </>
 }
-
-export const MakeSmoothScroll = ({
-  children,
-}:{
-  children: React.ReactNode
-})=>{
-  R.useEffect(()=>{
-
-  },[])
-  return <>
-    {children}
-  </>
-}
