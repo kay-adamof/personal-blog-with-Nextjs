@@ -1,10 +1,13 @@
 import * as R from 'react'
+import * as T from '@/types'
+
 export const CloseDrawer = ({ children }: { children: React.ReactNode }) => {
   R.useEffect(() => {
-    // if drawer is opened in which hidden input is active
     window.addEventListener('scroll', () => {
+      const id:T.DrawerId = 'my-drawer'
+
       const toggler = document.querySelector(
-        'input#my-drawer',
+        `input#${id}`,
       ) as HTMLInputElement | null
       toggler?.checked && toggler.click()
     })
@@ -13,6 +16,7 @@ export const CloseDrawer = ({ children }: { children: React.ReactNode }) => {
    {children} 
   </>
 }
+
 export const MakeSmoothScroll = ({
   children,
 }:{
