@@ -1,17 +1,17 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import React, { HTMLAttributes } from 'react'
+import * as R from 'react'
 import * as S from '@server_components'
 import * as T from '@/types'
 
 const components = {
   CardSkeleton: S.CardSkeleton,
   CardStyleLink: S.CardStyleLink,
-  Suspense: React.Suspense,
+  Suspense: R.Suspense,
   Tweet: S.MyTweet,
   code: S.Code,
-  iframe: (props: HTMLAttributes<HTMLIFrameElement>) => {
-    return <iframe loading='lazy' {...props}>{props.children}</iframe>
-  },
+  h3: S.H3,
+  h2: S.H2,
+  iframe: S.IFrame
 } satisfies { [k in T.ComponentName]?: any }
 
 export const CustomMDX = (props: any) => {
