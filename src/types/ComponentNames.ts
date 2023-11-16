@@ -1,5 +1,7 @@
 export type ComponentName =
   | 'Suspense'
+  | 'h2'
+  | 'h3'
   | 'CardSkeleton'
   | 'iframe'
   | 'CardStyleLink'

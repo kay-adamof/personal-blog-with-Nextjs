@@ -16,3 +16,6 @@ export type { DefaultIconSize } from '@/components/icons'
 
 export type { getMetadataArray } from '@/lib'
 
+export type { DrawerId } from '@/components/DrawerState'
+
+
